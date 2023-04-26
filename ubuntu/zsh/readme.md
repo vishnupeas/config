@@ -48,7 +48,7 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.o
 `fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 ```
 
-> Use powerlevel10k other themes with oh-my-zsh [ has more control over themes from terminal itself]
+> You could also Use powerlevel10k or other themes with oh-my-zsh [ has more control over themes from terminal itself]
 
 ## Install oh-my-posh
 
