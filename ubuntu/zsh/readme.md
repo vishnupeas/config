@@ -50,23 +50,12 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.o
 
 > Use powerlevel10k other themes with oh-my-zsh [ has more control over themes from terminal itself]
 
-## Install oh-my-zsh
+## Install oh-my-posh
 
-- install
+- Follow oh-my-posh guide from [official website](https://ohmyposh.dev/docs/installation/linux)
+- Go to [nerd fonts](https://ohmyposh.dev/docs/installation/fonts) and download `SpaceMono NF` and `Firacode NF` and install it on the system.
 
-```sh
- sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
- ```
-
-## Adding powerlevel10k theme
-
-- download nerd fonts and install them individually from the offcial github
-- add powerlevel10k theme,
-
-```sh
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-```
-
-- Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in ~/.zshrc
-- restart the terminal
-- cofigure again using `p10k configure`
+- Configure your shell to use [oh-my-posh](https://ohmyposh.dev/docs/installation/prompt) and use a configure to set your theme in .zshrc with `--config ~/.poshthemes/blue-own.omp.json`. My other fav themes are
+  - night-owl
+  - powerlevel10k_modern
+  - tokyonight_storm
