@@ -42,7 +42,7 @@
 
     Follow the directory for more themes and instructions
 
-## **filezilla**
+8. ## **filezilla**
     ```sh
     sudo apt install filezilla
     ```
