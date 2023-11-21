@@ -1,21 +1,53 @@
 ## Install oh-my-zsh
 
-- install
+- install oh-my-zsh by cloning the repo, if connection goes out use a differnt network, its caused by GFW china
 
 ```sh
  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
  ```
 
-## Adding powerlevel10k theme
+ ## Install zsh-syntax-highlighting
 
-- download nerd fonts and install them individually from the offcial github
-- add powerlevel10k theme,
+- install
 
 ```sh
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-- Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in ~/.zshrc
-- restart the terminal
-- cofigure again using `p10k configure`
-s
+- Activate the plugin in ~/.zshrc:
+   `plugins=( [plugins...] zsh-syntax-highlighting)`
+
+## Install zsh-autosuggestions
+
+- install
+
+```sh
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+- Activate the plugin in ~/.zshrc:
+   `plugins=( [other plugins...] zsh-autosuggestions)`
+
+## Install zsh-autocomplete
+
+- Install
+
+   ```sh
+   git clone --depth 1 https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+   ```
+- Add it to `FPATH` in your `.zshrc` by adding the following line before `source "$ZSH/oh-my-zsh.sh"`:
+
+      fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
+## Adding powerlevel10k theme
+
+- Download nerd fonts and install them individually from the [nerd font site](https://www.nerdfonts.com/font-downloads) or [official github](https://github.com/romkatv/powerlevel10k#manual-font-installation). You can work with any nerd fonts but `MesloLGS NF` nerd font is patched to work better with powerlevel10k which is avialable in the official github page.
+- Visual Studio Code: Open File → Preferences → Settings (PC) or Code → Preferences → Settings (Mac), enter `terminal.integrated.fontFamily` in the search box at the top of Settings tab and set the value below to `MesloLGS NF`.
+- GNOME Terminal (the default Ubuntu terminal): Open Terminal → Preferences and click on the selected profile under Profiles. Check Custom font under Text Appearance and select `MesloLGS NF Regular`.
+- Add powerlevel10k theme,
+    ```sh
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    ```
+- Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `.zshrc`
+- Restart the terminal
+- Configure again using `p10k configure`

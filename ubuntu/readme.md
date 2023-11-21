@@ -3,7 +3,7 @@
     sudo apt install build-essential
     ```
 
-2. ## **git**
+1. ## **git**
     #### Install & Configure
     ```sh
     sudo apt install git &&
@@ -16,33 +16,38 @@
     ssh-keygen -t ed25519
     ```
 
-3. ## **curl**
+1. ## **curl**
     ```sh
     sudo apt install curl
     ```
 
-4. ## **zsh**
+1. ## **vim**
+    ```sh
+    sudo apt install vim
+    ```
+
+1. ## **zsh**
     Follow the directory for install instruction
 
-5. ## **fnm**
+1. ## **fnm**
     ```sh
     curl -fsSL https://fnm.vercel.app/install | bash &&
     fnm use 18
     ```
     
-6. ## **neofetch**
+1. ## **neofetch**
     ```sh
     sudo apt install neofetch
     ```
 
-7. ## **cool-retro-term**
+1. ## **cool-retro-term**
     ```sh
     sudo apt install cool-retro-term
     ```
 
     Follow the directory for more themes and instructions
 
-8. ## **filezilla**
+1. ## **filezilla**
     ```sh
     sudo apt install filezilla
     ```
