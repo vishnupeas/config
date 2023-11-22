@@ -40,6 +40,9 @@
     sudo apt install neofetch
     ```
 
+1. ## **docker**
+    Install docker following the instructions from the [official website](https://docs.docker.com/engine/install/ubuntu/#installation-methods)
+
 1. ## **cool-retro-term**
     ```sh
     sudo apt install cool-retro-term
