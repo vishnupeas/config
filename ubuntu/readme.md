@@ -34,7 +34,10 @@
     curl -fsSL https://fnm.vercel.app/install | bash &&
     fnm use 18
     ```
-    
+
+1. ## **dbeaver**
+    Install dbeaver debian package from the [official website](https://dbeaver.io/download/) and install it
+
 1. ## **neofetch**
     ```sh
     sudo apt install neofetch
