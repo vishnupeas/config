@@ -63,3 +63,6 @@
     ```sh
     sudo apt install filezilla
     ```
+
+1. ## **clockify**
+    Install clockify following the instructions from the [official website](https://clockify.me/apps)
