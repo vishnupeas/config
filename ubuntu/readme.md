@@ -42,6 +42,7 @@
     ```sh
     sudo apt install neofetch
     ```
+
 1. ## **local wordpress**
     - #### Install local
         Download local from their [official website](https://localwp.com/)
