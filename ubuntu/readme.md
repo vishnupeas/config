@@ -42,6 +42,11 @@
     ```sh
     sudo apt install neofetch
     ```
+1. ## **local wordpress**
+    - #### Install local
+        Download local from their [official website](https://localwp.com/)
+    - #### Access the site on dbeaver
+        To access the database on third party SQL client softwares read more information on how to do it from [here](https://community.localwp.com/t/how-can-i-connect-to-mysql-using-tcp-ip-rather-than-a-socket-on-macos-linux/21220)
 
 1. ## **docker**
     Install docker following the instructions from the [official website](https://docs.docker.com/engine/install/ubuntu/#installation-methods)
