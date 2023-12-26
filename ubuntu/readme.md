@@ -29,6 +29,11 @@
 1. ## **zsh**
     Follow the directory for install instruction
 
+1. ## **tmux**
+    ```sh
+    sudo apt install tmux
+    ```
+
 1. ## **fnm**
     ```sh
     curl -fsSL https://fnm.vercel.app/install | bash &&
