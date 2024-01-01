@@ -1,3 +1,4 @@
+## TMUX
 - some of the commands involved in using tmux
 Use `tmux new -s vim` to start a new session in tmux
 Use `tmux kill-server` to kill all the tmux servers
@@ -9,6 +10,7 @@ Use `tmux source-file ~/.config/tmux.conf` to apply changes to existing tmux win
 
 ### General
 Use `ctrl + b + s` to open up navigation menu
+Use `ctrl + b + I` to update the tmux configuration
 
 ### Sessions
 Use `ctrl + b + d` to detach the tmux session
