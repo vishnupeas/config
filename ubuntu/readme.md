@@ -22,17 +22,13 @@
     ```
 
 1. ## **vim**
-    ```sh
-    sudo apt install vim
-    ```
+    Follow the directory for install instructions
 
 1. ## **zsh**
-    Follow the directory for install instruction
+    Follow the directory for install instructions
 
 1. ## **tmux**
-    ```sh
-    sudo apt install tmux
-    ```
+    Follow the directory for install instructions
 
 1. ## **fnm**
     ```sh

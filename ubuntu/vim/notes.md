@@ -10,3 +10,4 @@
 ## Date: 1/1/2024
 - To split the pane horizontally use `Ctrl + w + s` or `:sp` or `:split`, eg: `sp file1.txt`
 - To split the pane verticallly use `Ctrl + w + v` or `:vsp` or `vsplit`, eg: `vsp file1.txt`
+- To make the panes all of equal width use `Ctrl + w + =`
