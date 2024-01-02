@@ -21,3 +21,11 @@
 - I can yank a single line with `yy` or yank multiple lines towards bottom with `y2j` or multiple lines towards top with `y4k`
 - I can delete multiple lines with `d5j` or `d5k`, I can also do `d5l` and `d5h` but this is not often used
 - I can go 5 words backwords with `5b` or `5B` and go 5 words infront with `4w` or `5W`, again this is not often used
+
+## Date: 2/1/2024
+- From the netrw listing, I can `%` to create a file and `d` to create a directory 
+- From the file that is opened, I can use `E` or `Ex` or `Explore` to bring in the listing
+- ##### CHANGE - use ` ` (space) as `<leader>`
+- ##### CHANGE - use `<leader>pv` to explore the listing
+- Use `:so` to source the current file and to see the changes then and there, but the more permanent changes will happen after restart
+- Use `Ctrl + e` to scroll down and `Ctrl + y` to scroll up

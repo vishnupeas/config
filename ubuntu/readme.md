@@ -22,8 +22,10 @@
     ```
 
 1. ## **FUSE**
-Read more in [here](https://github.com/AppImage/AppImageKit/wiki/FUSE)
-Ubuntu (>= 22.04):
+	Read more in [here](https://github.com/AppImage/AppImageKit/wiki/FUSE)
+	
+	For Ubuntu (>= 22.04):
+
     ```sh
     sudo add-apt-repository universe
     sudo apt install libfuse2

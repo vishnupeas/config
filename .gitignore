@@ -1,0 +1,3 @@
+# ignore all temp files
+**.swp
+**.backup
