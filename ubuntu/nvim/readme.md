@@ -1,5 +1,5 @@
 ## Install
-1. Download nvim.appimage from github
+1. Download `nvim.appimage` from github
 1. Run `chmod u+x nvim.appimage && ./nvim.appimage`
     - If your system does not have FUSE you can extract the appimage:
         ```
@@ -10,3 +10,9 @@
 1. When you type nvim it should "just work™"
 1. Bonus: add this to ~/.bashrc /~/.zshrc etc to create an alias in case you accidentally type vi (I always type it by mistake): alias vi=nvim
 1. Bonus #2: Also in your bashrc/zshrc etc set your EDITOR env var so various programs know what editor you prefer to use: EDITOR=/usr/local/bin/nvim
+1. Install `ripgrep` for telescope fuzzy finder, find more on this from [github](https://github.com/BurntSushi/ripgrep)
+   ```sh
+   curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
+   sudo dpkg -i ripgrep_13.0.0_amd64.deb
+   ```
+
