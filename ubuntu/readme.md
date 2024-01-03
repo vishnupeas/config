@@ -56,7 +56,7 @@
     ```
 
 1. ## **dbeaver**
-    Install dbeaver debian package from the [official website](https://dbeaver.io/download/) and install it
+    Install dbeaver debian package from the [official website](https://dbeaver.io/download)
 
 1. ## **neofetch**
     ```sh
@@ -78,6 +78,9 @@
     ```
 
     Follow the directory for more themes and instructions
+
+1. ## **qBittorrent**
+   Download the AppImage form the [official website](https://www.fosshub.com/qBittorrent.html) and have it placed under `/usr/local/bin` 
 
 1. ## **filezilla**
     ```sh
