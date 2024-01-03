@@ -6,7 +6,7 @@
  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
  ```
 
- ## Install zsh-syntax-highlighting
+## Install zsh-syntax-highlighting
 
 - install
 
@@ -57,3 +57,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 You can change the colors on terminal and change the orders of it in .p10k.zsh
 Read more on this on the [official github](https://github.com/romkatv/powerlevel10k#how-do-i-change-prompt-colors)
 
+#### Update the zshrc with my config from git
+Git clone my repo and create a symbolic link to the directory
+```sh
+git clone git@github.com:woomiz/config.git ~/packages/config
+ln -sf ~/packages/config/ubuntu/zsh/.zshrc ~/.zshrc
+```
