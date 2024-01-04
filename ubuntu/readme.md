@@ -70,7 +70,6 @@
     ```sh
     sudo apt install cool-retro-term
     ```
-
     Follow the directory for more themes and instructions
 
 1. ## **qBittorrent**
