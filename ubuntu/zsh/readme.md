@@ -3,7 +3,7 @@
 - install
 
 ```sh
-sudo apt install zsh
+sudo apt install zsh -y
 ```
 
 - Verify installation by running `zsh --version`. Expected result: zsh 5.0.8 or more recent.

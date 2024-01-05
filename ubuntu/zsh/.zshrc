@@ -113,7 +113,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # fnm
-export PATH="/home/woozi/.local/share/fnm:$PATH"
+export PATH="/home/elmiur/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
 # nvim setup
