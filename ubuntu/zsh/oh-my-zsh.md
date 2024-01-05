@@ -43,6 +43,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 #### Initializing powderlevel10k
 - Download nerd fonts and install them individually from the [official github](https://github.com/romkatv/powerlevel10k#manual-font-installation) , if that doesn't work **then only** try downloading the font from [nerd font site](https://www.nerdfonts.com/font-downloads). You can work with any nerd fonts but `MesloLGS NF` nerd font is patched to work better with powerlevel10k which is avialable in the official github page.
+- Use `font-manager` application to add the fonts.
 - Visual Studio Code: Open File → Preferences → Settings (PC) or Code → Preferences → Settings (Mac), enter `terminal.integrated.fontFamily` in the search box at the top of Settings tab and set the value below to `MesloLGS NF`.
 - GNOME Terminal (the default Ubuntu terminal): Open Terminal → Preferences and click on the selected profile under Profiles. Check Custom font under Text Appearance and select `MesloLGS NF Regular`.
 - Add powerlevel10k theme,

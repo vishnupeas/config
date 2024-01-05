@@ -43,6 +43,14 @@
 1. ## **neovim**
     Follow the directory for install instructions
 
+1. ## **fontmanager**
+    This will help you install and manage fonts with ease for gnome distributions, find more [here](https://github.com/FontManager/font-manager).
+    ```sh
+    sudo add-apt-repository ppa:font-manager/staging
+    sudo apt-get update
+    sudo apt-get install font-manager
+    ```
+
 1. ## **zsh**
     Follow the directory for install instructions
 
