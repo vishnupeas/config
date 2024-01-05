@@ -58,6 +58,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 You can change the colors on terminal and change the orders of it in .p10k.zsh
 Read more on this on the [official github](https://github.com/romkatv/powerlevel10k#how-do-i-change-prompt-colors)
 
+You can check the colors that your terminal supports by entering
+```sh
+for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+```
+
 #### Update the .p10k.zsh with my config
 You can change the colors but to use already configured settings from my repo create a symlink to the file
 ```sh

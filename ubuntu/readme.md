@@ -12,7 +12,7 @@
     ```
     #### Setup SSH
     ```sh
-    mkdir .ssh &&
+    mkdir ~/.ssh &&
     cd ~/.ssh &&
     ssh-keygen -t ed25519
     ```
@@ -43,7 +43,7 @@
 1. ## **neovim**
     Follow the directory for install instructions
 
-1. ## **fontmanager**
+1. ## **font-manager**
     This will help you install and manage fonts with ease for gnome distributions, find more [here](https://github.com/FontManager/font-manager).
     ```sh
     sudo add-apt-repository ppa:font-manager/staging
