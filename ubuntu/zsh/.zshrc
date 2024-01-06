@@ -113,11 +113,12 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # fnm
-export PATH="/home/elmiur/.local/share/fnm:$PATH"
+export PATH="/home/$USER/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
 # nvim setup
 alias vi=nvim
+alias vim=nvim
 
 #tmux
 alias tmux="tmux -u"
