@@ -22,6 +22,13 @@
     sudo apt install curl -y
     ```
 
+1. ## **xclip**
+    This will let me use + and * on nvim for clipboard copy and paste. 
+    ```sh
+    sudo apt update &&
+    sudo apt install xclip -y
+    ```
+
 1. ## **FUSE**
     Read more in [here](https://github.com/AppImage/AppImageKit/wiki/FUSE)
     For Ubuntu (>= 22.04):
