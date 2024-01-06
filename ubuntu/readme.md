@@ -17,9 +17,6 @@
     ssh-keygen -t ed25519
     ```
     
-1. ## **kitty**
-   Follow the directory for install instructions 
-
 1. ## **curl**
     ```sh
     sudo apt install curl -y
@@ -31,6 +28,9 @@
     sudo apt update &&
     sudo apt install xclip -y
     ```
+
+1. ## **kitty**
+   Follow the directory for install instructions 
 
 1. ## **Create a passwordless guest user**
     1. Create a user named `guest` with a temporary password
