@@ -16,6 +16,9 @@
     cd ~/.ssh &&
     ssh-keygen -t ed25519
     ```
+    
+1. ## **kitty**
+   Follow the directory for install instructions 
 
 1. ## **curl**
     ```sh
