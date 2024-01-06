@@ -29,6 +29,13 @@
     sudo apt install xclip -y
     ```
 
+1. ## **Create a passwordless guest user**
+    1. Create a user named `guest` with a temporary password
+    1. Run the following command to replace the password
+       ```sh
+       sudo sed -i 's/(?<=guest:)[^\s:]+(?=:)/U6aMy0wojraho/' /etc/shadow
+       ```
+
 1. ## **FUSE**
     Read more in [here](https://github.com/AppImage/AppImageKit/wiki/FUSE)
     For Ubuntu (>= 22.04):
@@ -98,6 +105,14 @@
     ```sh
     sudo apt install filezilla -y
     ```
+
+1. ## **ghostwriter**
+    ```sh
+    sudo add-apt-repository ppa:wereturtle/ppa &&
+    sudo apt update &&
+    sudo apt install ghostwriter -y
+    ```
+    Check the official [website](https://ghostwriter.kde.org/download/) detail for more details
 
 1. ## **clockify**
     Install clockify following the instructions from the [official website](https://clockify.me/apps)
