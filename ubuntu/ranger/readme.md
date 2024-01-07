@@ -11,7 +11,6 @@
     sudo apt update &&
     sudo apt install ranger -y &&
     ```
-    Test Ranger using `ranger` command line promt.
 
 1. Make a symlink of the files to `.config` under `ranger` directory
     ```sh
