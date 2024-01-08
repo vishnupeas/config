@@ -119,6 +119,13 @@ eval "`fnm env`"
 # nvim setup
 alias vi=nvim
 alias vim=nvim
+alias n=nvim
 
-#tmux
+# tmux
 alias tmux="tmux -u"
+
+# ranger
+# variable RANGER_LOAD_DEFAULT_RC to FALSE to avoid loading it twice.
+export RANGER_LOAD_DEFAULT_RC=false
+# alias ranger
+alias r="ranger"
