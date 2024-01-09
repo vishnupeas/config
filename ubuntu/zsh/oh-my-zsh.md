@@ -1,15 +1,13 @@
 ## Install oh-my-zsh
 
-- install oh-my-zsh by cloning the repo, if connection goes out use a differnt network, its caused by GFW china
-
+Install oh-my-zsh by cloning the repo, if connection goes out use a differnt network, its caused by GFW china
 ```sh
- sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
- ```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
 ## Install zsh-syntax-highlighting
 
-- install
-
+- Install
 ```sh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
@@ -19,7 +17,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 ## Install zsh-autosuggestions
 
-- install
+- Install
 
 ```sh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions

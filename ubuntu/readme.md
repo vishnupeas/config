@@ -1,10 +1,10 @@
 ## Ubuntu Setup
 ![setup_preview](./preview.png)
 
-This is my attempt to configure ubuntu for my future needs. This project will include  
-\* Zsh, powerline10k, nvim, tmux, ranger setup in `patagonia` theme  
-\* Install instructions for all the packages that I use for daily workflow and fun  
-\* Notes for certain setups and usage with personal keymaps  
+This is my attempt to configure ubuntu for my future needs. This project will include
+* Zsh, powerline10k, nvim, tmux, ranger setup in `patagonia` theme
+* Install instructions for all the packages that I use for daily workflow and fun
+* Notes for certain setups and usage with personal keymaps
 
 ## Packages
 1. ## **build-essentials**

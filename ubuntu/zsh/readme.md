@@ -1,17 +1,16 @@
 ## Install Zsh
 
-- install
-
-```sh
-sudo apt install zsh -y
-```
+- Install zsh
+  ```sh
+  sudo apt install zsh -y
+  ```
 - Verify installation by running `zsh --version`. Expected result: zsh 5.0.8 or more recent.
 - Make it your default shell: `chsh -s $(which zsh)`
 - Restart your computer to start using the new shell.
 - Test with `$SHELL --version`. Expected result: 'zsh 5.8' or similar
 
 ## oh-my-zsh 
-Follow the detailed instruction 
+Follow the detailed instruction
 
 The Use of powerlevel10k or other themes with oh-my-zsh gives more control over themes from terminal itself.
 
