@@ -1,12 +1,12 @@
-## ubuntu setup
+## Ubuntu Setup
 ![setup_preview](./preview.png)
 
-This is my attempt to configure my ubuntu to needs for the future. This project will include
-- nvim, tmux, ranger setup in `patagonia` theme
-- install instructions all the packages that I use for daily workflow
-- notes for certain setups and usage with personal keymaps
+This is my attempt to configure ubuntu for my future needs. This project will include
+- Zsh, powerline10k, nvim, tmux, ranger setup in `patagonia` theme
+- Install instructions for all the packages that I use for daily workflow and fun
+- Notes for certain setups and usage with personal keymaps
 
-
+## Packages
 1. ## **build-essentials**
     ```sh 
     sudo apt install build-essential -y
@@ -32,7 +32,7 @@ This is my attempt to configure my ubuntu to needs for the future. This project 
     ```
 
 1. ## **xclip**
-    This will let me use + and * on nvim for clipboard copy and paste. 
+    This will let me use + and * on vim/nvim for clipboard copy and paste. 
     ```sh
     sudo apt update &&
     sudo apt install xclip -y
