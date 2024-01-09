@@ -1,8 +1,11 @@
+## ubuntu setup
+![setup_preview](./preview.png)
+
 This is my attempt to configure my ubuntu to needs for the future. This project will include
 - nvim, tmux, ranger setup in `patagonia` theme
 - install instructions all the packages that I use for daily workflow
 - notes for certain setups and usage with personal keymaps
-![setup_preview](./preview.png)
+
 
 1. ## **build-essentials**
     ```sh 
@@ -123,5 +126,12 @@ This is my attempt to configure my ubuntu to needs for the future. This project 
     ```
     Check the official [website](https://ghostwriter.kde.org/download/) detail for more details
 
+1. ## **vlc**
+    ```sh
+    sudo snap install vlc
+    ```
+    Check the official [website](https://www.videolan.org/vlc/) detail for more details
+
 1. ## **clockify**
     Install clockify following the instructions from the [official website](https://clockify.me/apps)
+
