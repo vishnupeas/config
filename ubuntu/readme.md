@@ -28,6 +28,7 @@ This is my attempt to configure ubuntu for my future needs. This project will in
     
 1. ## **curl**
     ```sh
+    sudo apt update &&
     sudo apt install curl -y
     ```
 
@@ -72,8 +73,8 @@ This is my attempt to configure ubuntu for my future needs. This project will in
 1. ## **font-manager**
     This will help you install and manage fonts with ease for gnome distributions, find more [here](https://github.com/FontManager/font-manager).
     ```sh
-    sudo add-apt-repository ppa:font-manager/staging
-    sudo apt-get update
+    sudo add-apt-repository ppa:font-manager/staging &&
+    sudo apt-get update &&
     sudo apt-get install font-manager
     ```
 
@@ -134,4 +135,3 @@ This is my attempt to configure ubuntu for my future needs. This project will in
 
 1. ## **clockify**
     Install clockify following the instructions from the [official website](https://clockify.me/apps)
-
