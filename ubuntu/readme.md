@@ -1,5 +1,6 @@
 ## Ubuntu Setup
-![setup_preview](./preview.png)
+![ranger setup preview](./ranger_preview.png)
+![terminal setup preview](./terminal_preview.png)
 
 This is my attempt to configure ubuntu for my future needs. This project will include
 * Zsh, powerline10k, nvim, tmux, ranger setup in `patagonia` theme
