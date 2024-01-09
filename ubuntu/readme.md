@@ -1,3 +1,9 @@
+This is my attempt to configure my ubuntu to needs for the future. This project will include
+- nvim, tmux, ranger setup in `patagonia` theme
+- install instructions all the packages that I use for daily workflow
+- notes for certain setups and usage with personal keymaps
+![setup_preview](./preview.png)
+
 1. ## **build-essentials**
     ```sh 
     sudo apt install build-essential -y
