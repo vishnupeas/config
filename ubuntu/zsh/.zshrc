@@ -116,16 +116,18 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/home/$USER/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
-# nvim setup
+# alias config
 alias vi=nvim
 alias vim=nvim
 alias n=nvim
+
+# key remaps config
+bindkey '^I ' autosuggest-accept
 
 # tmux
 alias tmux="tmux -u"
 
 # ranger
+alias r="ranger"
 # variable RANGER_LOAD_DEFAULT_RC to FALSE to avoid loading it twice.
 export RANGER_LOAD_DEFAULT_RC=false
-# alias ranger
-alias r="ranger"

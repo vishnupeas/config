@@ -3,7 +3,8 @@
 ![terminal setup preview](./terminal_preview.png)
 
 This is my attempt to configure ubuntu for my future needs. This project will include
-* Zsh, powerline10k, nvim, tmux, ranger setup in `patagonia` theme
+* kitty, powerline10k, ranger setup in `patagonia` theme
+* nvim and tmux in `catppuccin` theme
 * Install instructions for all the packages that I use for daily workflow and fun
 * Notes for certain setups and usage with personal keymaps
 
@@ -114,6 +115,10 @@ This is my attempt to configure ubuntu for my future needs. This project will in
    sudo apt install qbittorrent -y
    ```
    If you want the latest version then download the AppImage form the [official website](https://www.fosshub.com/qBittorrent.html) and have it placed under `/usr/local/bin` 
+
+1. ## **VSCode**
+   - Download `spacemono NF` font to support editor font inside vscode from [here](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/SpaceMono.zip) or go to the [fonts website](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/SpaceMono.zip). Install it using the `font-manager`.
+   - Download the `.deb` by clicking [here](https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64), if that doesn't work then download it from the [official website](https://code.visualstudio.com/Download#)
 
 1. ## **filezilla**
     ```sh
