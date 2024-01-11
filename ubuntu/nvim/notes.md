@@ -25,11 +25,14 @@
 ## Date: 2/1/2024
 - From the netrw listing, I can `%` to create a file and `d` to create a directory 
 - From the file that is opened, I can use `E` or `Ex` or `Explore` to bring in the listing
-- ##### CHANGE - use ` ` (space) as `<leader>`
-- ##### CHANGE - use `<leader>pv` to explore the listing
+- CHANGE - use ` ` (space) as `<leader>`
+- CHANGE - use `<leader>pv` to explore the listing
 - Use `:so` to source the current file and to see the changes then and there, but the more permanent changes will happen after restart
 - Use `Ctrl + e` to scroll down and `Ctrl + y` to scroll up
 
 ## Date: 10/1/2024
 - Use `g0` to go the start of a line (multiline sentense)
 - Use `g$` to go the end of a line (multiline sentense)
+
+## Date: 11/1/2024
+- Use `:Lazy` to invoke lazy.nvim config
