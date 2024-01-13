@@ -19,6 +19,24 @@ local function my_on_attach(bufnr)
     vim.keymap.set('n', '<C-o>', api.node.open.replace_tree_buffer, opts('Open: In Place'))
     vim.keymap.set('n', '<C-i>', api.node.show_info_popup, opts('Info'))
     vim.keymap.set('n', '<C-s>', api.node.open.horizontal, opts('Open: Horizontal Split'))
+
+    -- add remap to use nvim-tree explorer like netrw explorer
+    vim.keymap.set(
+        "n",
+        "<leader>pv",
+        function()
+            if api.tree.is_visible() and (vim.fn.winnr('$')==1) then
+                api.tree.close()
+            else 
+                api.tree.open()
+                vim.cmd(":only")
+            end
+        end,
+        {
+            desc = "Nvim-tree Explorer"
+        }
+    )
+
 end
 
 return {

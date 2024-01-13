@@ -48,6 +48,4 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/the
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 -- exec :source/:so command
-vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
-end, {desc = "exec :source in cmd"})
+vim.keymap.set("n", "<leader><leader>", vim.cmd.source, {desc = "exec :source in cmd"})
