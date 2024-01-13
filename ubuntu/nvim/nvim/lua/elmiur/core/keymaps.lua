@@ -1,9 +1,6 @@
 -- map leader
 vim.g.mapleader = " "
 
--- open explorer
-vim.keymap.set("n", "<leader>pv", vim.cmd.E, {desc= "Open Explorer"})
-
 -- remove highlight
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", {desc = "Remove highlight"})
 

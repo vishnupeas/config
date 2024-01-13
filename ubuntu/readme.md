@@ -1,6 +1,7 @@
 ## Ubuntu Setup
 ![ranger setup preview](./ranger_preview.png)
 ![terminal setup preview](./terminal_preview.png)
+![nvim](./nvim.png)
 
 This is my attempt to configure ubuntu for my future needs. This project will include
 * kitty, powerline10k, ranger setup in `patagonia` theme
