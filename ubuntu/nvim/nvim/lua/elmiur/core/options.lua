@@ -1,6 +1,3 @@
--- map leader
-vim.g.mapleader = " "
-
 -- line numbers 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -34,7 +31,6 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 -- search settings
-vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 -- appearance

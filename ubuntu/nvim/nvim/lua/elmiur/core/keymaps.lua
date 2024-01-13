@@ -1,5 +1,17 @@
+-- map leader
+vim.g.mapleader = " "
+
 -- open explorer
 vim.keymap.set("n", "<leader>pv", vim.cmd.E, {desc= "Open Explorer"})
+
+-- remove highlight
+vim.keymap.set("n", "<leader>nh", ":nohl<CR>", {desc = "Remove highlight"})
+
+-- get out form insert mode using jk 
+vim.keymap.set("i", "jk", "<Esc>", {desc = "esc from insert mode"})
+
+-- when deleting char using x in normal mode don't add it to the register
+vim.keymap.set("n", "x", '"_x')
 
 -- move text in select mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
