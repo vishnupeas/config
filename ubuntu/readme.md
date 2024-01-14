@@ -1,7 +1,9 @@
 ## Ubuntu Setup
-![ranger setup preview](./ranger_preview.png)
-![terminal setup preview](./terminal_preview.png)
-![nvim](./nvim.png)
+|                                                                |                                                                |
+| :------------------------------------------------------------: | :------------------------------------------------------------: |
+| <img alt="Nvim Startup" src="./nvim_startup.png">              | <img alt="Nvim Editor" src="./nvim_editor.png">                |
+| <img alt="Ranger" src="./ranger.png">                          | <img alt="Terminal" src="./terminal.png">                      |
+
 
 This is my attempt to configure ubuntu for my future needs. This project will include
 * kitty, powerline10k, ranger setup in `patagonia` theme

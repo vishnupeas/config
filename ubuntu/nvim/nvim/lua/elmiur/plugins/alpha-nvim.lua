@@ -16,7 +16,7 @@ return {
 
         -- add margins to the top and left
         startify.opts.layout[1].val = 2
-        startify.opts.opts.margin = 43
+        startify.opts.opts.margin = 45
 
         -- disable MRU
         startify.section.mru.val = { { type = "padding", val = 0 } }
