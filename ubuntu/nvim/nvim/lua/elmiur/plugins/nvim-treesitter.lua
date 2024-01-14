@@ -37,6 +37,18 @@ return {
 			-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
 			auto_install = true,
 
+            indent = { enable = true },
+
+            incremental_selection = {
+                enable = true,
+                keymaps = {
+                    init_selection = '<c-space>',
+                    node_incremental = '<c-space>',
+                    scope_incremental = '<c-s>',
+                    node_decremental = '<M-space>',
+                },
+            },
+
 			highlight = {
 				-- `false` will disable the whole extension
 				enable = true,
@@ -48,26 +60,19 @@ return {
 				additional_vim_regex_highlighting = false,
 			},
 
+			-- nvim-ts-context-commentstring config
 			ts_context_commentstring = {
 				enable = true,
 				enable_autocmd = false,
 			},
 
+			-- nvim-treesitter-textobjects configs
 			autotag = {
 				enable = true,
 				enable_close_on_slash = false,
 			},
 
-			indent = { enable = true },
-			incremental_selection = {
-				enable = true,
-				keymaps = {
-					init_selection = '<c-space>',
-					node_incremental = '<c-space>',
-					scope_incremental = '<c-s>',
-					node_decremental = '<M-space>',
-				},
-			},
+			-- nvim-treesitter-textobjects config
 			textobjects = {
 				select = {
 					enable = true,
@@ -114,7 +119,9 @@ return {
 			},
 		},
 		config = function(_, opts)
+			-- For nvim-ts-context-commentstring
 			vim.g.skip_ts_context_commentstring_module = true
+
 			require('nvim-treesitter.configs').setup(opts)
 		end,
 	},
