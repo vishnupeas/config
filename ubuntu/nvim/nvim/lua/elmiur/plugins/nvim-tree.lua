@@ -36,7 +36,6 @@ local function my_on_attach(bufnr)
             desc = "Nvim-tree Explorer"
         }
     )
-
 end
 
 return {
