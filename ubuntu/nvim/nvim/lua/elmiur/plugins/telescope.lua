@@ -4,6 +4,7 @@ return {
     dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-tree/nvim-web-devicons",
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
     },
     config = function()
         local telescope = require("telescope")
@@ -22,6 +23,9 @@ return {
                 },
             },
         })
+
+        -- adds fzf to telescope search
+        require('telescope').load_extension('fzf')
 
         vim.keymap.set('n', '<leader>pff', builtin.find_files, { desc = "Project find files"})
         vim.keymap.set('n', '<leader>gff', builtin.git_files, { desc = "Git find files" })
