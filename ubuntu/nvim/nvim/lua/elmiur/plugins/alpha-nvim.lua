@@ -13,8 +13,8 @@ return {
             [[      |  __/| || | | | | || || |_| || |    ]],
             [[       \___||_||_| |_| |_||_| \__,_||_|    ]],
         }
-        startify.section.header.opts.margin = 0
 
+        -- add margins to the top and left
         startify.opts.layout[1].val = 2
         startify.opts.opts.margin = 43
 
