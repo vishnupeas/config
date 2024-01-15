@@ -61,7 +61,6 @@ return {
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
         -- Change the Diagnostic symbols in the sign column (gutter)
-        -- (not in youtube nvim video)
         local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
         for type, icon in pairs(signs) do
             local hl = "DiagnosticSign" .. type
@@ -74,7 +73,7 @@ return {
             on_attach = on_attach,
         })
 
-        -- configure typescript server with plugin
+        -- configure typescript server
         lspconfig["tsserver"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
@@ -92,47 +91,18 @@ return {
             on_attach = on_attach,
         })
 
-        -- configure svelte server
-        lspconfig["svelte"].setup({
-            capabilities = capabilities,
-            on_attach = function(client, bufnr)
-                on_attach(client, bufnr)
-
-                vim.api.nvim_create_autocmd("BufWritePost", {
-                    pattern = { "*.js", "*.ts" },
-                    callback = function(ctx)
-                        if client.name == "svelte" then
-                            client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
-                        end
-                    end,
-                })
-            end,
-        })
-
-        -- configure prisma orm server
-        lspconfig["prismals"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
-
         -- configure graphql language server
         lspconfig["graphql"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
-            filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+            filetypes = { "graphql", "gql", "typescriptreact", "javascriptreact" },
         })
 
         -- configure emmet language server
         lspconfig["emmet_ls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
-            filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-        })
-
-        -- configure python server
-        lspconfig["pyright"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
+            filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
         })
 
         -- configure lua server (with special settings)
