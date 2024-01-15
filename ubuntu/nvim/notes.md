@@ -36,3 +36,7 @@
 
 ## Date: 11/1/2024
 - Use `:Lazy` to invoke lazy.nvim config
+
+## Date: 15/1/2024
+- Use `Ctrl + o` to jump back to previous cursor position
+- Use `Ctrl + i` to jump to the current cursor position
