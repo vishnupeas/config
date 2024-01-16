@@ -36,7 +36,7 @@ vim.opt.incsearch = true
 -- appearance
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8 -- limit the scroll to x char above and below
-vim.opt.isfname:append("@-@") 
+vim.opt.isfname:append("@-@")
 vim.opt.colorcolumn = "80"
 
 -- refresh 

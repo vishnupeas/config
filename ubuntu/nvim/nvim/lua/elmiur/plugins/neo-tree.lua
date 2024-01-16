@@ -107,11 +107,6 @@ return{
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
 
-        -- change color for arrows in tree to light blue
-        vim.cmd([[ highlight NeoTreeGitUntracked guifg=#FFFFFF ]])
-        vim.cmd([[ highlight NeoTreeGitModified guifg=#FFFFFF ]])
-        vim.cmd([[ highlight NeoTreeGitIgnored guifg=#FFFFFF ]])
-
         neo_tree.setup(opts)
     end
 }
