@@ -1,6 +1,12 @@
 -- map leader
 vim.g.mapleader = " "
 
+-- add netrw explorer explorer
+vim.keymap.set("n", "<leader>pv", ":E<CR>")
+
+-- quit window
+vim.keymap.set("n", "<leader>q", ":q<CR>")
+
 -- remove highlight
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", {desc = "Remove highlight"})
 
@@ -23,7 +29,6 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "keep search terms in the middle alon
 -- paste on top doesn't copy the text that is being pasted on to the buffer
 vim.keymap.set("x", "<leader>p", [["_dp]], { desc = "paste into null register"})
 
- 
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "yank the selection to clipboard" }) -- yank the selection to clipboard
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "yank one line to clipboard" }) -- yank the line to clipboard
 

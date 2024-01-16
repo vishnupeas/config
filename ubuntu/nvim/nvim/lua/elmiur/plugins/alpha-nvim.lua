@@ -7,7 +7,7 @@ return {
         local startify = require("alpha.themes.startify")
 
         startify.section.header.val = {
-            [[             _             _               ]], 
+            [[             _             _               ]],
             [[        ___ | | _ __ ___  (_) _   _  _ __  ]],
             [[       / _ \| || '_ ` _ \ | || | | || '__| ]],
             [[      |  __/| || | | | | || || |_| || |    ]],
@@ -24,7 +24,7 @@ return {
         -- Set menu
         startify.section.top_buttons.val = {
             startify.button("e", " > New File", "<cmd>ene<CR>"),
-            startify.button("SPC ee", " > Toggle file explorer", "<cmd>NvimTreeToggle<CR>"),
+            startify.button("SPC ee", " > Toggle file explorer", "<cmd>Neotree toggle current reveal_force_cwd<CR>"),
             startify.button("SPC pff", " > Find File", "<cmd>Telescope find_files<CR>"),
             startify.button("SPC pfw", " > Find Word", "<cmd>Telescope live_grep<CR>"),
             startify.button("SPC wr", " > Restore Session For Current Directory", "<cmd>SessionRestore<CR>"),

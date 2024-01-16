@@ -1,4 +1,5 @@
 return {
-  "stevearc/dressing.nvim",
-  event = "VeryLazy",
+    "stevearc/dressing.nvim",
+    enabled = false,
+    event = "VeryLazy",
 }
