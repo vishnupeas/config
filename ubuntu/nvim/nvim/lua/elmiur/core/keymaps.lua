@@ -2,16 +2,16 @@
 vim.g.mapleader = " "
 
 -- add netrw explorer explorer
-vim.keymap.set("n", "<leader>pv", ":E<CR>")
+vim.keymap.set("n", "<leader>pv", "<cmd>E<CR>")
 
 -- quit window
-vim.keymap.set("n", "<leader>q", ":q<CR>")
+vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
 
 -- remove highlight
-vim.keymap.set("n", "<leader>nh", ":nohl<CR>", {desc = "Remove highlight"})
+vim.keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "Remove highlight" })
 
--- get out form insert mode using jk 
-vim.keymap.set("i", "jk", "<Esc>", {desc = "esc from insert mode"})
+-- get out form insert mode using jk
+vim.keymap.set("i", "jk", "<Esc>", { desc = "esc from insert mode" })
 
 -- when deleting char using x in normal mode don't add it to the register
 vim.keymap.set("n", "x", '"_x')
@@ -20,19 +20,19 @@ vim.keymap.set("n", "x", '"_x')
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "J", "mzJ`z",{ desc = "Stack lines" }) -- don't move cursor while J towards end is used
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Stack lines" }) -- don't move cursor while J towards end is used
 vim.keymap.set("n", "<C-d>", "<C-d>zz") -- keep the cursor in the middle as pagedown
 vim.keymap.set("n", "<C-u>", "<C-u>zz") -- keep the cursor in the middle as pageup
-vim.keymap.set("n", "n", "nzzzv", { desc = "keep search terms in the middle along with cursor"}) -- keep search terms in the middle along with cursor
-vim.keymap.set("n", "N", "Nzzzv", { desc = "keep search terms in the middle along with cursor"}) -- keep search terms in the middle along with cursor
+vim.keymap.set("n", "n", "nzzzv", { desc = "keep search terms in the middle along with cursor" }) -- keep search terms in the middle along with cursor
+vim.keymap.set("n", "N", "Nzzzv", { desc = "keep search terms in the middle along with cursor" }) -- keep search terms in the middle along with cursor
 
 -- paste on top doesn't copy the text that is being pasted on to the buffer
-vim.keymap.set("x", "<leader>p", [["_dp]], { desc = "paste into null register"})
+vim.keymap.set("x", "<leader>p", [["_dp]], { desc = "paste into null register" })
 
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "yank the selection to clipboard" }) -- yank the selection to clipboard
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "yank the selection to clipboard" }) -- yank the selection to clipboard
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "yank one line to clipboard" }) -- yank the line to clipboard
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]], { desc = "delete with null register" })
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "delete with null register" })
 
 -- remaping ctrl+c to be esc so that it works in visual block mode
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -49,8 +49,8 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>")
+vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
 
 -- exec :source/:so command
-vim.keymap.set("n", "<leader><leader>", vim.cmd.source, {desc = "exec :source in cmd"})
+vim.keymap.set("n", "<leader><leader>", vim.cmd.source, { desc = "exec :source in cmd" })
