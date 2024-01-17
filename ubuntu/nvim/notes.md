@@ -1,13 +1,16 @@
 # Learning VIM
 
 ## Date: 14/12/2023
+
 - Use `vim` to open vim, make changes, then use `:wq file.txt` to write to the file and quit the file. Alternatively use `vim file.txt` to create a file in edit mode and save it with `:w`.
 - `:e[dit]` accepts wildcard arguments. `*` matches any files in the current directory. If you are only looking for files with `.yml` extension in the current directory:
+
 ```
 :edit *.yml<Tab>
 ```
 
 ## Date: 1/1/2024
+
 - To split the vim pane horizontally use `Ctrl + w + s` or `:sp` or `:split`, eg: `sp file1.txt`
 - To split the vim pane verticallly use `Ctrl + w + v` or `:vsp` or `vsplit`, eg: `vsp file1.txt`
 - To make the vim panes all of equal width use `Ctrl + w + =`
@@ -23,7 +26,8 @@
 - I can go 5 words backwords with `5b` or `5B` and go 5 words infront with `4w` or `5W`, again this is not often used
 
 ## Date: 2/1/2024
-- From the netrw listing, I can `%` to create a file and `d` to create a directory 
+
+- From the netrw listing, I can `%` to create a file and `d` to create a directory
 - From the file that is opened, I can use `E` or `Ex` or `Explore` to bring in the listing
 - CHANGE - use ` ` (space) as `<leader>`
 - CHANGE - use `<leader>pv` to explore the listing
@@ -31,12 +35,20 @@
 - Use `Ctrl + e` to scroll down and `Ctrl + y` to scroll up
 
 ## Date: 10/1/2024
+
 - Use `g0` to go the start of a line (multiline sentense)
 - Use `g$` to go the end of a line (multiline sentense)
 
 ## Date: 11/1/2024
+
 - Use `:Lazy` to invoke lazy.nvim config
 
 ## Date: 15/1/2024
+
 - Use `Ctrl + o` to jump back to previous cursor position
 - Use `Ctrl + i` to jump to the current cursor position
+
+## Date: 17/1/2024
+
+- Use `ciw` to delete and go to insert mode
+- Use `caw` to delete with spaces and go to insert mode

@@ -11,6 +11,9 @@ vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
 vim.keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "Remove highlight" })
 
 -- get out form insert mode using jk
+vim.keymap.set("v", "jk", "<Esc>")
+
+-- remaping jk to work in visual mode
 vim.keymap.set("i", "jk", "<Esc>", { desc = "esc from insert mode" })
 
 -- when deleting char using x in normal mode don't add it to the register
@@ -31,6 +34,8 @@ vim.keymap.set("x", "<leader>p", [["_dp]], { desc = "paste into null register" }
 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "yank the selection to clipboard" }) -- yank the selection to clipboard
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "yank one line to clipboard" }) -- yank the line to clipboard
+vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]], { desc = "paste the selection from clipboard on the right" }) -- yank the selection to clipboard
+vim.keymap.set({ "n", "v" }, "<leader>P", [["+P]], { desc = "paste the selection from clipboard on the left" }) -- yank the selection to clipboard
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "delete with null register" })
 

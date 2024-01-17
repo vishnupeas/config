@@ -2,6 +2,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			"JoosepAlviste/nvim-ts-context-commentstring",
@@ -42,10 +43,10 @@ return {
 			incremental_selection = {
 				enable = true,
 				keymaps = {
-					init_selection = "<c-space>",
-					node_incremental = "<c-space>",
-					scope_incremental = "<c-s>",
-					node_decremental = "<M-space>",
+					init_selection = "<C-space>",
+					node_incremental = "<C-space>",
+					scope_incremental = false,
+					node_decremental = "<bs>",
 				},
 			},
 
@@ -78,11 +79,20 @@ return {
 					enable = true,
 					lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
 					keymaps = {
-						-- You can use the capture groups defined in textobjects.scm
+						-- for assignments
+						["a="] = { query = "@assignment.outer", desc = "Select outer part of an assignment" },
+						["i="] = { query = "@assignment.inner", desc = "Select inner part of an assignment" },
+						["l="] = { query = "@assignment.lhs", desc = "Select left hand side of an assignment" },
+						["r="] = { query = "@assignment.rhs", desc = "Select right hand side of an assignment" },
+
 						["aa"] = "@parameter.outer",
 						["ia"] = "@parameter.inner",
+
+						-- for functions
 						["af"] = "@function.outer",
 						["if"] = "@function.inner",
+
+						-- for classes
 						["ac"] = "@class.outer",
 						["ic"] = "@class.inner",
 					},
