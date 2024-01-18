@@ -10,9 +10,6 @@ vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
 -- remove highlight
 vim.keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "Remove highlight" })
 
--- get out form insert mode using jk
-vim.keymap.set("v", "jk", "<Esc>")
-
 -- remaping jk to work in visual mode
 vim.keymap.set("i", "jk", "<Esc>", { desc = "esc from insert mode" })
 
