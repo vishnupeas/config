@@ -52,3 +52,7 @@
 
 - Use `ciw` to delete and go to insert mode
 - Use `caw` to delete with spaces and go to insert mode
+
+## Date: 23/1/2024
+
+- CHANGE - Use `Ctrl + p` to move the view upwards

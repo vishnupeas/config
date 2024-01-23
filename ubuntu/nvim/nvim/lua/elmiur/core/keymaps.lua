@@ -16,6 +16,9 @@ vim.keymap.set("i", "jk", "<Esc>", { desc = "esc from insert mode" })
 -- when deleting char using x in normal mode don't add it to the register
 vim.keymap.set("n", "x", '"_x')
 
+-- remap Scroll the text upward by one line
+vim.keymap.set("n", "<C-p>", "<C-e>")
+
 -- move text in select mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
