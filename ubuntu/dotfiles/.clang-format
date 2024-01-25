@@ -1,0 +1,8 @@
+# Use defaults from the LLVM style, but with 4 columns indentation.
+BasedOnStyle: LLVM
+IndentWidth: 4
+
+# Change wrapping for if else stements
+BreakBeforeBraces: Custom
+BraceWrapping:
+  BeforeElse: true
