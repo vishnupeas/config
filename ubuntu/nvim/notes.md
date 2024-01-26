@@ -56,3 +56,22 @@
 ## Date: 23/1/2024
 
 - CHANGE - Use `Ctrl + p` to move the view upwards
+
+## Date: 26/1/2024
+
+- Use `ci + something` eg: `ci +"` from with in or near to "" to remove everything inside ""
+  ```js
+  const str = "something in here";
+  ```
+  Outputs:
+  ```js
+  const str = "";
+  ```
+- Use `ca + something` eg: `ca +"` from with in or near to "" to remove everything including ""
+  ```js
+  const str = "something in here";
+  ```
+  Outputs:
+  ```js
+  const str =
+  ```
