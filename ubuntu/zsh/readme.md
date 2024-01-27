@@ -9,7 +9,8 @@
 - Restart your computer to start using the new shell.
 - Test with `$SHELL --version`. Expected result: 'zsh 5.8' or similar
 
-## oh-my-zsh 
+## oh-my-zsh
+
 Follow the detailed instruction
 
 The Use of powerlevel10k or other themes with oh-my-zsh gives more control over themes from terminal itself.

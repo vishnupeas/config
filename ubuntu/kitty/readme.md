@@ -1,4 +1,5 @@
 ## Install the latest version of kitty with the binary
+
 ```sh
 # Install and update kitty using
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin &&
@@ -27,7 +28,8 @@ sudo update-alternatives --config x-terminal-emulator
 ```
 
 ## Replace with updated config files
+
 ```sh
-ln -sf ~/packages/config/ubuntu/kitty/current-theme.conf ~/.config/kitty/current-theme.conf && 
+ln -sf ~/packages/config/ubuntu/kitty/current-theme.conf ~/.config/kitty/current-theme.conf &&
 ln -sf ~/packages/config/ubuntu/kitty/kitty.conf ~/.config/kitty/kitty.conf
 ```
