@@ -12,10 +12,10 @@
 ## Date: 1/1/2024
 
 - To split the vim pane horizontally use `Ctrl + w + s` or `:sp` or `:split`, eg: `sp file1.txt`
-- To split the vim pane verticallly use `Ctrl + w + v` or `:vsp` or `vsplit`, eg: `vsp file1.txt`
-- To make the vim panes all of equal width use `Ctrl + w + =`
-- To shift the vim pane to the top,right,bottom,left use `Ctrl + w + K` `Ctrl + w + L` `Ctrl + w + J` `Ctrl + w + H`
-- To search for a text use `/text` and to find the next occurence press `n` and to go back to previous occurence use `N`
+- To split the vim pane vertically use `Ctrl + w + v` or `:vsp` or `vsplit`, eg: `vsp file1.txt`
+- To make the vim panes all equal width use `Ctrl + w + =`
+- To shift the vim pane to the top, right, bottom, left use `Ctrl + w + K` `Ctrl + w + L` `Ctrl + w + J` `Ctrl + w + H`
+- To search for a text use `/text` and to find the next occurrence press `n` and to go back to previous occurrence use `N`
 - To search and replace, use `:%s/textToFind/replacementText/g, here /g will apply the changes for all the occurence but if you want to search and replace the first occurence then use `:%s/textToFind/replacementText`
 - Use `:bn` for buffer next, use `:bp` for buffer previous, use `:b 1` for using a numbered buffer
 - Use `:bd 1` to delete a buffer
@@ -23,7 +23,7 @@
 - I can go visual line mode with `V`, visual mode with `v` and visual block mode with `Ctrl + v`
 - I can yank a single line with `yy` or yank multiple lines towards bottom with `y2j` or multiple lines towards top with `y4k`
 - I can delete multiple lines with `d5j` or `d5k`, I can also do `d5l` and `d5h` but this is not often used
-- I can go 5 words backwords with `5b` or `5B` and go 5 words infront with `4w` or `5W`, again this is not often used
+- I can go 5 words backwards with `5b` or `5B` and go 5 words in-front with `4w` or `5W`, again this is not often used
 
 ## Date: 2/1/2024
 
@@ -36,8 +36,8 @@
 
 ## Date: 10/1/2024
 
-- Use `g0` to go the start of a line (multiline sentense)
-- Use `g$` to go the end of a line (multiline sentense)
+- Use `g0` to go the start of a line (multiline sentence)
+- Use `g$` to go the end of a line (multiline sentence)
 
 ## Date: 11/1/2024
 
@@ -75,3 +75,20 @@
   ```js
   const str =
   ```
+
+## Date 27/1/2024
+
+- Use `vert {cmd}` to split the command window to right eg: `vert h vsp`
+- Use `di + something` to delete inside the nearest eg: `di [` on
+  ```js
+  const arr = [2, 5, 6, 12];
+  ```
+  gives this in visual mode
+  ```js
+  const arr = [];
+  ```
+- Use `yi + something` to delete inside the nearest eg: `yi [` on
+  ```js
+  const arr = [2, 5, 6, 12];
+  ```
+  copies the values inside the string [
