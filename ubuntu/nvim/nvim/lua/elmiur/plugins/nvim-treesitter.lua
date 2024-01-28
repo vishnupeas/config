@@ -12,7 +12,6 @@ return {
 		opts = {
 			-- Add languages to be installed here that you want installed for treesitter
 			ensure_installed = {
-				"astro",
 				"c",
 				"cpp",
 				"css",
@@ -22,13 +21,11 @@ return {
 				"javascript",
 				"typescript",
 				"lua",
-				"php",
 				"python",
 				"scss",
 				"tsx",
 				"vim",
 				"vimdoc",
-				"vue",
 			},
 
 			-- Install parsers synchronously (only applied to `ensure_installed`)
@@ -53,6 +50,9 @@ return {
 			highlight = {
 				-- `false` will disable the whole extension
 				enable = true,
+
+				-- disable highlight for latex files
+				disable = { "latex" },
 
 				-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
 				-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).

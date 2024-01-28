@@ -173,4 +173,15 @@ This is my attempt to configure ubuntu for my future needs. This project will in
    Check the official [website](https://www.videolan.org/vlc/) detail for more details
 
 1. ## **clockify**
+
    Install clockify following the instructions from the [official website](https://clockify.me/apps)
+
+1. ## **spotify**
+
+   More details on installation, visit [official website](https://www.spotify.com/de-en/download/linux/)
+
+   ```sh
+   curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg &&
+   echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list &&
+   sudo apt-get update && sudo apt-get install spotify-client
+   ```

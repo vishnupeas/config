@@ -66,6 +66,7 @@ return {
 					{ name = "nvim_lsp" }, -- lsp for autocompletion
 					{ name = "path" }, -- file system paths
 					{
+						-- load only if other sources were not found
 						{ name = "buffer" }, -- text within current buffer
 					},
 				}),
@@ -110,9 +111,20 @@ return {
 				end,
 			},
 		},
-		config = function()
+		opts = {
+			-- Enable autotriggered snippets
+			enable_autosnippets = true,
+
+			-- Use Tab to trigger visual selection
+			store_selection_keys = "<Tab>",
+		},
+		config = function(_, opts)
+			local ls = require("luasnip")
+
 			-- load custom snippets
 			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/elmiur/snippets/" })
+
+			ls.setup(opts)
 		end,
 	},
 }

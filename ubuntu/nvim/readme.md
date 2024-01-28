@@ -31,3 +31,29 @@
    ```sh
    ln -sf ~/packages/config/ubuntu/dotfiles/.clang-format ~/
    ```
+1. Adding support for editing latex on nvim using `vimtex`. Read more on [official website](https://www.ejmastnak.com/tutorials/vim-latex/luasnip/)
+
+   - Install `tex-live`
+
+   ```sh
+   sudo apt-get update -y &&
+   sudo apt-get update texlive-latex-extra -y
+   ```
+
+   -- Install `latexmk`
+
+   ```sh
+   sudo apt-get install latexmk -y
+   ```
+
+   -- Install `pip/pip3` along with python3
+
+   ```sh
+   sudo apt install python3-pip -y
+   ```
+
+   -- Install `okular` as the pdf viewer
+
+   ```sh
+   sudo apt install okular -y
+   ```
