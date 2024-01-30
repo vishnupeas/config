@@ -35,6 +35,8 @@ return {
 				"graphql",
 				"emmet_ls",
 				"clangd",
+				"ltex",
+				"texlab",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -45,6 +47,7 @@ return {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"eslint_d", -- js linter
+				"latexindent", -- latex formatter
 			},
 		})
 	end,
