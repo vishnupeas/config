@@ -1,8 +1,25 @@
 return {
 	"nvim-lualine/lualine.nvim",
+	event = { "VimEnter", "BufReadPost", "BufNewFile" },
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	lazy = false,
-	opts = {
-		options = { theme = "nightfly" },
-	},
+	config = function()
+		local attached_clients = {
+			require("elmiur.utils.lualine").get_attached_clients,
+			color = {
+				gui = "bold",
+			},
+		}
+		-- Example lualine setup
+		require("lualine").setup({
+			options = {
+				theme = "nightfly",
+				globalstatus = true,
+			},
+
+			sections = {
+				lualine_b = { "branch", "diff" },
+				lualine_x = { attached_clients, "diagnostics", "filetype" },
+			},
+		})
+	end,
 }
