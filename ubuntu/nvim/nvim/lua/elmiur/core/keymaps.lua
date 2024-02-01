@@ -7,6 +7,9 @@ vim.keymap.set("n", "<leader>pv", "<cmd>E<CR>")
 -- quit window
 vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
 
+-- write to the file without using autocommands
+vim.keymap.set("n", "<leader>w", "<cmd>noa w<CR>")
+
 -- remove highlight
 vim.keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "Remove highlight" })
 
