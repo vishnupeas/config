@@ -131,3 +131,6 @@ alias tmux="tmux -u"
 alias r="ranger"
 # variable RANGER_LOAD_DEFAULT_RC to FALSE to avoid loading it twice.
 export RANGER_LOAD_DEFAULT_RC=false
+
+# add blender to path
+export PATH="/usr/local/bin/blender:$PATH"

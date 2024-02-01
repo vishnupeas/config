@@ -185,3 +185,7 @@ This is my attempt to configure ubuntu for my future needs. This project will in
    echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list &&
    sudo apt-get update && sudo apt-get install spotify-client
    ```
+
+1. ## **blender**
+
+   Follow the directory for install instructions
