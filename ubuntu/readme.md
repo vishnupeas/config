@@ -186,6 +186,24 @@ This is my attempt to configure ubuntu for my future needs. This project will in
    sudo apt-get update && sudo apt-get install spotify-client
    ```
 
+1. ## **discord**
+
+   More details on installation, visit [official website](https://discord.com/download)
+
+   ```sh
+   curl -Lo discord.deb "https://discord.com/api/download?platform=linux&format=deb" &&
+   sudo apt install ./discord.deb -y
+   ```
+
+1. ## **postman**
+
+   More details on installation, visit [official website](https://www.postman.com/downloads/)
+
+   ```sh
+   curl -Lo postman.deb "https://dl.pstmn.io/download/latest/linux_arm64" &&
+   sudo apt install ./postman.deb -y
+   ```
+
 1. ## **blender**
 
    Follow the directory for install instructions

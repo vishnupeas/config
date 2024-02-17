@@ -134,3 +134,6 @@ export RANGER_LOAD_DEFAULT_RC=false
 
 # add blender to path
 export PATH="/usr/local/bin/blender:$PATH"
+
+# add postman to path
+export PATH="/usr/local/bin/postman:$PATH"
