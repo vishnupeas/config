@@ -148,6 +148,10 @@ This is my attempt to configure ubuntu for my future needs. This project will in
    - Download `spacemono NF` font to support editor font inside vscode from [here](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/SpaceMono.zip) or go to the [fonts website](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/SpaceMono.zip). Install it using the `font-manager`.
    - Download the `.deb` by clicking [here](https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64), if that doesn't work then download it from the [official website](https://code.visualstudio.com/Download#)
 
+1. ## **IntelliJ IDEA**
+
+   Follow the directory for install instructions
+
 1. ## **filezilla**
 
    ```sh
