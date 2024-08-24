@@ -53,6 +53,10 @@ This is my attempt to configure ubuntu for my future needs. This project will in
 
    Follow the directory for install instructions
 
+1. ## **LAMP Setup**
+
+   Follow the directory for install instructions
+
 1. ## **Create a passwordless guest user**
 
    1. Create a user named `guest` with a temporary password
