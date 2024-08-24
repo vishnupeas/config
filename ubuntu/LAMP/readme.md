@@ -10,9 +10,9 @@ sudo apt update && sudo sudo apt upgrade
 
 1. Install `apache2`
 
-```sh
-sudo apt install apache2
-```
+   ```sh
+   sudo apt install apache2
+   ```
 
 1. Disable `apache2` on boot
 
@@ -20,11 +20,10 @@ sudo apt install apache2
    sudo systemctl disable apache2
    ```
 
-2. Check if firewall is enabled and http/https traffic is allowed for apache2. If its not enabled, enable it
-
-```sh
-sudo ufw app list
-```
+1. Check if firewall is enabled and http/https traffic is allowed for apache2. If its not enabled, enable it
+   ```sh
+   sudo ufw app list
+   ```
 
 ### Optional - Firewall
 
@@ -113,3 +112,16 @@ sudo ufw reload
    sudo systemctl stop mysql
    sudo systemctl restart mysql
    ```
+
+### PHP
+
+```sh
+sudo apt install php libapache2-mod-php php-mysql &&
+php -v
+```
+
+### phpmyadmin
+
+```sh
+sudo apt install phpmyadmin
+```
