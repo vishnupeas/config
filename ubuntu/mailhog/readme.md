@@ -1,6 +1,6 @@
 # Mailhog
 
-Mailhog is a email testing tool that mimicks SMTP server for local use.
+Mailhog is a email testing tool that mimics SMTP server for local use.
 
 ## Installing Mailhog
 
@@ -8,7 +8,7 @@ Mailhog is a email testing tool that mimicks SMTP server for local use.
 
    You can either run the executable file doing `./MailHog_linux_amd64` to use it immediately or turn it into a `systemd` service for better management later on.
 
-1. Move it to `/usr/local/bin` and rename it as mailhog
+1. Move it to `/usr/local/bin` and rename it as `mailhog`
 
    ```sh
    sudo mv MailHog_linux_amd64 /usr/local/bin/mailhog
@@ -52,4 +52,4 @@ Mailhog is a email testing tool that mimicks SMTP server for local use.
    sudo systemctl daemon-reload
    ```
 
-1. Use `systemd` start / stop / status of `mailhog`. The service must be visible in localhost post `8025` and the SMTP server at `1025`
+1. Use `systemctl` start / stop / status of `mailhog`. The service must be visible in localhost at port `8025` and the SMTP server at port `1025`
