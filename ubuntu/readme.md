@@ -215,3 +215,7 @@ This is my attempt to configure ubuntu for my future needs. This project will in
 1. ## **blender**
 
    Follow the directory for install instructions
+
+1. ## **mailhog**
+
+   Follow the directory for install instructions
