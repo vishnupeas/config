@@ -216,6 +216,10 @@ This is my attempt to configure ubuntu for my future needs. This project will in
 
    Follow the directory for install instructions
 
+1. ## **obsidian**
+
+   Download the debian package from [official website](https://obsidian.md/download)
+
 1. ## **mailhog**
 
    Follow the directory for install instructions
