@@ -6,6 +6,27 @@
 sudo apt update && sudo sudo apt upgrade
 ```
 
+### PHP
+
+```sh
+sudo apt install php libapache2-mod-php php-mysql &&
+php -v
+```
+
+### Composer
+
+Read the [official doc](https://getcomposer.org/download/) for more clarity.
+
+```sh
+cd &&
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+
+sudo mv composer.phar /usr/local/bin/composer # to move composer.phar to a directory in $PATH
+```
+
 ### Apache
 
 1. Install `apache2`
@@ -113,15 +134,56 @@ sudo ufw reload
    sudo systemctl restart mysql
    ```
 
-### PHP
-
-```sh
-sudo apt install php libapache2-mod-php php-mysql &&
-php -v
-```
-
 ### phpmyadmin
 
-```sh
-sudo apt install phpmyadmin
-```
+#### Case 1: Smooth Installation
+
+1. Install phpmyadmin
+
+   ```sh
+   sudo apt install phpmyadmin
+   ```
+
+1. link phpmyadmin to `apache2`
+
+   ```sh
+   sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+   ```
+
+#### Case 2: Manually Set Up phpMyAdmin Database
+
+We have to do this if we are stuck with the installation screen of `phpmyadmin` giving an error `Password doesn't satisfy the current policy requirements` asking you to retry.
+
+- Setup the database, table and user
+
+  ```sh
+  sudo mysql -u root -p
+
+  # create database and user
+  CREATE DATABASE phpmyadmin;
+  CREATE USER 'phpmyadmin'@'localhost' IDENTIFIED BY 'your_password_here';
+  GRANT ALL PRIVILEGES ON phpmyadmin.* TO 'phpmyadmin'@'localhost' WITH GRANT OPTION;
+  FLUSH PRIVILEGES;
+
+  # Import phpmyadmin configuration tables to the database
+  sudo mysql -u root -p phpmyadmin < /usr/share/phpmyadmin/sql/create_tables.sql
+  ```
+
+- Configure phpmyadmin to use the database
+
+  ```sh
+  sudo vim /etc/phpmyadmin/config.inc.php
+  ```
+
+- Here, change the values on the file
+
+  ```
+  $cfg['Servers'][$i]['controluser'] = 'phpmyadmin';
+  $cfg['Servers'][$i]['controlpass'] = 'your_password_here';
+  ```
+
+- Restart apache2
+
+  ```sh
+  sudo systemctl restart apache2
+  ```
