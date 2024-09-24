@@ -33,3 +33,6 @@ sudo update-alternatives --config x-terminal-emulator
 ln -sf ~/packages/config/ubuntu/kitty/current-theme.conf ~/.config/kitty/current-theme.conf &&
 ln -sf ~/packages/config/ubuntu/kitty/kitty.conf ~/.config/kitty/kitty.conf
 ```
+
+## Maximize the terminal size
+So once you open the kitty terminal after restart and maximize it to fit your window, kitty will remember. Maximize the terminal with `Alt + Space` and then choose `Maximize` 
