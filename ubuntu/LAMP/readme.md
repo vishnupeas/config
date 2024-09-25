@@ -187,3 +187,92 @@ We have to do this if we are stuck with the installation screen of `phpmyadmin` 
   ```sh
   sudo systemctl restart apache2
   ```
+
+#### Update phpmyadmin upload limit
+
+- Open the file to edit
+
+  ```sh
+  sudo vim /etc/php/8.3/apache2/php.ini
+  ```
+
+- Now change values in this file to
+
+  ```
+  memory_limit = 750M
+  post_max_size = 750M
+  upload_max_filesize = 1000M
+  max_execution_time = 5000
+  max_input_time = 3000
+  ```
+
+- Restart `apache2` after this
+
+  ```sh
+  sudo systemctl restart apache2
+  ```
+
+### Setup virtual hosts
+
+In this step we are trying to configure `apache` to host a website that we want to serve under a certain domain. By default `apache` serves files under `/var/www/html/`. But we need it to server the files in our custom file path.
+
+- Edit `/etc/hosts`
+
+  ```sh
+  sudo vim /etc/hosts
+  ```
+
+  Now add all the domains in here eg:
+
+  ```
+  127.0.0.1 elmiur.test
+  ```
+
+- Make a copy of default apache conf
+
+  ```sh
+  cd /etc/apache2/sites-enabled/
+  sudo cp 000-default.conf mysitesomething.conf #filename is not significant
+  sudo vim mysitesomething.conf
+  ```
+
+- Now replace the file with this content. Here i'm serving a laravel project, so the root files are served under `public` directory.
+
+  ```conf
+  <VirtualHost *:80>
+      ServerAdmin webmaster@localhost
+      ServerName elmiur.test
+      DocumentRoot /home/elmiur/work/projects/mysite/public
+
+      <Directory /home/elmiur/work/projects/mysite/public>
+          Options Indexes FollowSymLinks
+          AllowOverride All
+          Require all granted
+      </Directory>
+
+      ErrorLog ${APACHE_LOG_DIR}/error.log
+      CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+  </VirtualHost>
+  ```
+
+- Enable this configuration with
+
+  ```sh
+  sudo a2ensite mysitesomething.conf
+  sudo systemctl restart apache2
+  ```
+
+- Give permission to access storage. Because the application generates files like user data(profile image, other attachments), cache, logs etc... that needs to be served by web-servers like `apache` and `nginx` we need to give access to these folders inside project for the user group `www-data`. Here we are giving ownership to current user (can do anything with the data) and group ownership to `var-www` (can read and write).
+
+  ```sh
+  sudo chown -R $USER:www-data storage
+  ```
+
+- Make sure the project path is discoverable. Check that with
+
+  ```sh
+  namei /home/elmiur/work/mysite/
+
+  sudo chmod o+x /home/elmiur # If this is not discoverable, give persmission to the path with
+  ```
