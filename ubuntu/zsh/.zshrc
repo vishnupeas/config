@@ -120,15 +120,13 @@ eval "`fnm env`"
 alias vi=nvim
 alias vim=nvim
 alias n=nvim
+alias kssh="kitten ssh" # kitty/kitten ssh
+alias tmux="tmux -u" # tmux 
+alias r="ranger" # ranger
 
 # key remaps config
 bindkey '^I ' autosuggest-accept
 
-# tmux
-alias tmux="tmux -u"
-
-# ranger
-alias r="ranger"
 # variable RANGER_LOAD_DEFAULT_RC to FALSE to avoid loading it twice.
 export RANGER_LOAD_DEFAULT_RC=false
 
