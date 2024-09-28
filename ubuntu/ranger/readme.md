@@ -13,11 +13,10 @@
 
    ```sh
    sudo apt update &&
-   sudo apt install ranger -y &&
+   sudo apt install ranger -y
    ```
 
 1. Make a symlink of the files to `.config` under `ranger` directory
    ```sh
-   rm -r ~/.config/ranger &&
    ln -sf ~/packages/config/ubuntu/ranger/ranger ~/.config/ranger
    ```
