@@ -1,4 +1,4 @@
-## Steps
+## STEPS
 
 ### Pre-Requisite
 
@@ -8,9 +8,32 @@ sudo apt update && sudo sudo apt upgrade
 
 ### PHP
 
+#### Install Latest Version
+
 ```sh
-sudo apt install php libapache2-mod-php php-mysql &&
+sudo apt install php
+sudo apt install libapache2-mod-php # install apache2 for latest php
+sudo apt install php-mysql # install mysql for latest php
 php -v
+```
+
+#### Optional - Install a differnt version of php
+
+```sh
+sudo apt update &&
+sudo apt install -y lsb-release gnupg2 ca-certificates apt-transport-https software-properties-common # Install some packages before
+
+sudo add-apt-repository ppa:ondrej/php
+sudo apt update
+sudo apt install php8.2 -y
+sudo apt install php8.2-bcmath php8.2-xml php8.2-curl php8.2-dom php8.2-mysql php8.2-gd php8.2-zip # install required extensions (here I have added it for laravel)
+
+sudo update-alternatives --config php # to change the deafult php version to current version
+
+# install apache2 for php8.2 - do this after installing apache2
+sudo apt install libapache2-mod-php8.2
+sudo a2enmod php8.2 # Enable mod_php module
+sudo systemctl restart apache2
 ```
 
 ### Composer
