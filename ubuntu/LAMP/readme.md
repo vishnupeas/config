@@ -26,7 +26,7 @@ sudo apt install -y lsb-release gnupg2 ca-certificates apt-transport-https softw
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update
 sudo apt install php8.2 -y
-sudo apt install php8.2-bcmath php8.2-xml php8.2-curl php8.2-dom php8.2-mysql php8.2-gd php8.2-zip # install required extensions (here I have added it for laravel)
+sudo apt install php8.2-bcmath php8.2-xml php8.2-curl php8.2-dom php8.2-mysql php8.2-gd php8.2-zip php8.2-intl # install required extensions (here I have added it for laravel)
 
 sudo update-alternatives --config php # to change the deafult php version to current version
 
