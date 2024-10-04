@@ -21,18 +21,21 @@ This is my attempt to configure ubuntu for my future needs. This project will in
    ```
 
 1. ## **git**
+
    #### Install & Configure
+
    ```sh
    sudo apt install git -y &&
-   git config --global user.name "woomiz" &&
-   git config --global user.email "vishnups.developer@gmail.com"
+   ln -sf ~/packages/config/ubuntu/dotfiles/.gitconfig ~/.gitconfig
    ```
+
    #### Setup SSH
+
    ```sh
-   mkdir ~/.ssh &&
    cd ~/.ssh &&
-   ssh-keygen -t ed25519
+   ssh-keygen -t ed25519 -f github
    ```
+
 1. ## **curl**
 
    ```sh
