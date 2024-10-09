@@ -6,6 +6,16 @@
 sudo apt update && sudo sudo apt upgrade
 ```
 
+### Install 3 in 1
+
+Install `php`, `composer`, `apache2`. Run this one time and close the terminal.
+
+```sh
+/bin/bash -c "$(curl -fsSL https://php.new/install/linux)"
+```
+
+Then run the same code again. For more details check [official doc](https://laravel.com/docs/11.x/installation)
+
 ### PHP
 
 #### Install Latest Version
