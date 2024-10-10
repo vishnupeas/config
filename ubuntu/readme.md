@@ -211,8 +211,7 @@ This is my attempt to configure ubuntu for my future needs. This project will in
    More details on installation, visit [official website](https://www.postman.com/downloads/)
 
    ```sh
-   curl -Lo postman.deb "https://dl.pstmn.io/download/latest/linux_arm64" &&
-   sudo apt install ./postman.deb -y
+    curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
    ```
 
 1. ## **blender**
