@@ -1,4 +1,4 @@
-## Blender
+## Postman
 
 1.  Download the latest version from the [official website](https://www.postman.com/downloads/)
 
@@ -10,6 +10,12 @@
 
     ```sh
     tar -xvzf Postman.tar.gz -C ~/.local/share/
+    ```
+
+1.  Remove `tar.gz` file
+
+    ```sh
+    rm -rf Postman.tar.gz
     ```
 
 1.  Make an executable file in PATH `/usr/local/bin` with symlink to one inside
