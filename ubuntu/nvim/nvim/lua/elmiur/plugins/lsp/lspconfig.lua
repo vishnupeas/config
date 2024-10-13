@@ -88,6 +88,12 @@ return {
 			on_attach = on_attach,
 		})
 
+		-- configure php server
+		lspconfig["intelephense"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 		-- configure C,C++ server
 		lspconfig["clangd"].setup({
 			capabilities = capabilities,
