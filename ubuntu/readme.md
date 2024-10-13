@@ -208,11 +208,7 @@ This is my attempt to configure ubuntu for my future needs. This project will in
 
 1. ## **postman**
 
-   More details on installation, visit [official website](https://www.postman.com/downloads/)
-
-   ```sh
-    curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
-   ```
+   Follow the directory for install instructions
 
 1. ## **blender**
 
