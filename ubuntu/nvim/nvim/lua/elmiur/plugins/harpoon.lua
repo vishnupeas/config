@@ -3,7 +3,7 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
-	commit = "2cd4e03372f7ee5692c8caa220f479ea07970f17",
+	branch = "harpoon2",
 	opts = {
 		settings = {
 			save_on_toggle = true,
