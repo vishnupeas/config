@@ -221,3 +221,15 @@ This is my attempt to configure ubuntu for my future needs. This project will in
 1. ## **mailhog**
 
    Follow the directory for install instructions
+
+1. ## **wakatime**
+
+   ```sh
+   ln -s ~/packages/config/ubuntu/dotfiles/.wakatime.cfg ~/.wakatime.cfg
+   ```
+
+   Go to wakatime [webiste](https://wakatime.com/) -> settings and get the `secret api key` and replace that inside the file. Current key is old.
+
+   ```sh
+   vim ~/packages/config/ubuntu/dotfiles/.wakatime.cfg
+   ```
