@@ -4,25 +4,52 @@ return {
 	opts = {
 		current_line_blame = true,
 	},
-	keys = {
-		{
-			"<leader>ghp",
-			"<CMD>Gitsigns preview_hunk_inline<CR>",
-			desc = "Gitsigns preview_hunk_inline",
-		},
-		{
-			"<leader>ghs",
-			"<CMD>Gitsigns stage_hunk<CR>",
-			desc = "Gitsigns stage_hunk",
-		},
-		{
-			"<leader>gbs",
-			"<CMD>Gitsigns stage_buffer<CR>",
-			desc = "Gitsigns stage_buffer",
-		},
-	},
+	keys = {},
 	config = function(_, opts)
 		local gitsigns = require("gitsigns")
+
+		local function map(mode, l, r, opts)
+			opts = opts or {}
+			opts.buffer = bufnr
+			vim.keymap.set(mode, l, r, opts)
+		end
+
+		-- Navigation
+		map("n", "]c", function()
+			if vim.wo.diff then
+				vim.cmd.normal({ "]c", bang = true })
+			else
+				gitsigns.nav_hunk("next")
+			end
+		end)
+
+		map("n", "[c", function()
+			if vim.wo.diff then
+				vim.cmd.normal({ "[c", bang = true })
+			else
+				gitsigns.nav_hunk("prev")
+			end
+		end)
+
+		-- Actions
+		map("n", "<leader>ghp", gitsigns.preview_hunk)
+
+		map("n", "<leader>ghs", gitsigns.stage_hunk)
+		map("n", "<leader>ghu", gitsigns.undo_stage_hunk)
+		map("n", "<leader>ghr", gitsigns.reset_hunk)
+		map("v", "<leader>ghs", function()
+			gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+		end)
+		map("v", "<leader>ghr", function()
+			gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+		end)
+
+		map("n", "<leader>gbs", gitsigns.stage_buffer)
+		map("n", "<leader>gbr", gitsigns.reset_buffer)
+
+		-- Text object
+		map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+
 		gitsigns.setup(opts)
 	end,
 }
