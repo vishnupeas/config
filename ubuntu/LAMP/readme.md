@@ -8,11 +8,16 @@ sudo apt update && sudo sudo apt upgrade
 
 ### Install 3 in 1
 
-Install `php`, `composer`, `apache2`. Run this one time and close the terminal.
+1. Install `php`, `composer`, `laravel`. Run this one time and close the terminal.
 
-```sh
-/bin/bash -c "$(curl -fsSL https://php.new/install/linux)"
-```
+   ```sh
+   /bin/bash -c "$(curl -fsSL https://php.new/install/linux)"
+   ```
+
+1. Remove php from the folder, so that you can control the CLI php version with manual installation. This will make sure you only use `laravel` and `composer` from the 3 in 1 package
+   ```sh
+   rm ~/.config/herd-lite/bin/php
+   ```
 
 Then run the same code again. For more details check [official doc](https://laravel.com/docs/11.x/installation)
 
@@ -120,6 +125,28 @@ sudo ufw reset
 # Reload UFW to apply any changes made to configuration files
 sudo ufw reload
 ```
+
+### Postgresql
+
+1. Install Postgresql. A default user `postgres` will be created to do administrative tasks.
+
+   ```sh
+   sudo apt install postgresql -y
+   ```
+
+1. Edit `php.ini` to make use of postgresql extensions instead of the deault mysql extension. Uncomment both `;extension=pdo_pgsql` and `;extension=pgsql`
+
+   ```sh
+   sudo vim /etc/php/8.2/apache2/php.ini &&
+   sudo systemctl restart apache2
+   ```
+
+1. Change password from being blank to something.
+   ```sh
+   sudo -i -u postgres
+   psql
+   \password postgres
+   ```
 
 ### MySQL
 
