@@ -15,11 +15,12 @@ sudo apt update && sudo sudo apt upgrade
    ```
 
 1. Remove php from the folder, so that you can control the CLI php version with manual installation. This will make sure you only use `laravel` and `composer` from the 3 in 1 package
+
    ```sh
    rm ~/.config/herd-lite/bin/php
    ```
 
-Then run the same code again. For more details check [official doc](https://laravel.com/docs/11.x/installation)
+1. Then run the same code again. For more details check [official doc](https://laravel.com/docs/11.x/installation)
 
 ### PHP
 
@@ -134,6 +135,14 @@ sudo ufw reload
    sudo apt install postgresql -y
    ```
 
+1. Change password from being blank to something.
+
+   ```sh
+   sudo -i -u postgres
+   psql
+   \password postgres
+   ```
+
 1. Edit `php.ini` to make use of postgresql extensions instead of the deault mysql extension. Uncomment both `;extension=pdo_pgsql` and `;extension=pgsql`
 
    ```sh
@@ -141,11 +150,13 @@ sudo ufw reload
    sudo systemctl restart apache2
    ```
 
-1. Change password from being blank to something.
+1. Install and enable extensions for postgresql
+
    ```sh
-   sudo -i -u postgres
-   psql
-   \password postgres
+   sudo apt install php8.2-pgsql
+   sudo phpenmod pdo_pgsql # enable `pdo_pgsql` extension
+   sudo systemctl restart apache2
+   php -m | grep pdo_pgsql # verify extension is enabled
    ```
 
 ### MySQL
