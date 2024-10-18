@@ -66,7 +66,39 @@ php -r "unlink('composer-setup.php');"
 sudo mv composer.phar /usr/local/bin/composer # to move composer.phar to a directory in $PATH
 ```
 
-### Apache
+### Nginx Web Server
+
+1. Install Nginx
+
+   ```sh
+   sudo apt update &&
+   sudo apt install nginx -y
+   ```
+
+1. Install required extensions to work with php
+
+   ```sh
+   sudo apt install php8.2-pgsql php8.2-fpm # Install
+   dpkg -l | grep -E 'php8.2-pgsql|php8.2-fpm' # Verify the install
+   sudo systemctl disable php8.2-fpm # disable fpm by default on boot
+   sudo systemctl status php8.2-fpm # check the running status of fpm and make sure its running
+   ```
+
+1. Disable starting Nginx on boot
+
+   ```sh
+   sudo systemctl disable nginx
+   ```
+
+1. Configure `ufw` firewall.
+
+   ```sh
+   sudo ufw app list
+   sudo ufw allow 'Nginx Full' # allow http and https
+   sudo ufw status
+   ```
+
+### Apache Web Server
 
 1. Install `apache2`
 
@@ -83,6 +115,8 @@ sudo mv composer.phar /usr/local/bin/composer # to move composer.phar to a direc
 1. Check if firewall is enabled and http/https traffic is allowed for apache2. If its not enabled, enable it
    ```sh
    sudo ufw app list
+   sudo ufw allow 'Apache Full' # allow http and https
+   sudo ufw status
    ```
 
 ### Optional - Firewall
@@ -159,6 +193,11 @@ sudo ufw reload
    php -m | grep pdo_pgsql # verify extension is enabled
    ```
 
+1. Disable postgresql from automatically starting on boot
+   ```sh
+   sudo systemctl disable postgresql
+   ```
+
 ### MySQL
 
 1. Install MySQL
@@ -205,7 +244,7 @@ sudo ufw reload
    sudo systemctl restart mysql
    ```
 
-### phpmyadmin
+### Optional - phpmyadmin
 
 #### Case 1: Smooth Installation
 
@@ -283,7 +322,71 @@ We have to do this if we are stuck with the installation screen of `phpmyadmin` 
   sudo systemctl restart apache2
   ```
 
-### Setup virtual hosts
+### Setup Virtual Hosts
+
+#### Nginx Server
+
+In this step we are trying to configure `nginx` to serve a website that we want under a certain domain. By default `nginx` serves files under `/var/www/html/`. But we need the server to handle files in our custom file path.
+
+- Edit `/etc/hosts`
+
+  ```sh
+  sudo vim /etc/hosts
+  ```
+
+  Now add all the domains in here eg:
+
+  ```
+  127.0.0.1 sitename.test
+  ```
+
+- Make a copy of default nginx file
+
+  ```sh
+  cd /etc/nginx/sites-available/
+  sudo cp default sitename.test #filename is not significant
+  sudonvim sitename.test
+  ```
+
+- Now replace the file with this content. Here i'm serving a laravel project, so the root files are served under `public` directory.
+
+  ```
+  server {
+      listen 80;
+      listen [::]:80;
+
+      server_name sitename.test;
+      root /home/elmiur/work/project/sitename/public;
+      index index.php;
+
+      location / {
+          try_files $uri $uri/ /index.php?$query_string;
+      }
+
+      location ~ \.php$ {
+          include snippets/fastcgi-php.conf;
+          fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+      }
+
+      location ~ /\.ht {
+          deny all;
+      }
+
+      access_log /var/log/nginx/sitename.access.log;
+      error_log /var/log/nginx/sitename.error.log;
+  }
+  ```
+
+- Enable this configuration and restart nginx
+
+  ```sh
+  sudo ln -s /etc/nginx/sites-available/sitename.test /etc/nginx/sites-enabled/
+
+  sudo nginx -t # to check nginx is working ok
+  sudo systemctl restart nginx # restart after modifying
+  ```
+
+#### Apache Server
 
 In this step we are trying to configure `apache` to host a website that we want to serve under a certain domain. By default `apache` serves files under `/var/www/html/`. But we need it to server the files in our custom file path.
 
@@ -296,15 +399,15 @@ In this step we are trying to configure `apache` to host a website that we want 
   Now add all the domains in here eg:
 
   ```
-  127.0.0.1 elmiur.test
+  127.0.0.1 sitename.test
   ```
 
 - Make a copy of default apache conf
 
   ```sh
   cd /etc/apache2/sites-enabled/
-  sudo cp 000-default.conf mysitesomething.conf #filename is not significant
-  sudo vim mysitesomething.conf
+  sudo cp 000-default.conf sitename.conf #filename is not significant
+  sudo vim sitename.conf
   ```
 
 - Now replace the file with this content. Here i'm serving a laravel project, so the root files are served under `public` directory.
@@ -312,10 +415,10 @@ In this step we are trying to configure `apache` to host a website that we want 
   ```conf
   <VirtualHost *:80>
       ServerAdmin webmaster@localhost
-      ServerName elmiur.test
+      ServerName sitename.test
       DocumentRoot /home/elmiur/work/projects/mysite/public
 
-      <Directory /home/elmiur/work/projects/mysite/public>
+      <Directory /home/sitename/work/projects/mysite/public>
           Options Indexes FollowSymLinks
           AllowOverride All
           Require all granted
@@ -330,8 +433,9 @@ In this step we are trying to configure `apache` to host a website that we want 
 - Enable this configuration with
 
   ```sh
-  sudo a2ensite mysitesomething.conf
-  sudo systemctl restart apache2
+  sudo a2ensite sitename.conf
+
+  sudo systemctl restart apache2 # for all modification
   ```
 
 - Give permission to access storage. Because the application generates files like user data(profile image, other attachments), cache, logs etc... that needs to be served by web-servers like `apache` and `nginx` we need to give access to these folders inside project for the user group `www-data`. Here we are giving ownership to current user (can do anything with the data) and group ownership to `var-www` (can read and write).
@@ -343,7 +447,7 @@ In this step we are trying to configure `apache` to host a website that we want 
 - Make sure the project path is discoverable. Check that with
 
   ```sh
-  namei /home/elmiur/work/mysite/
+  namei /home/elmiur/work/project/mysite
 
   sudo chmod o+x /home/elmiur # If this is not discoverable, give persmission to the path with
   ```

@@ -123,6 +123,7 @@ alias n=nvim
 alias kssh="kitten ssh" # kitty/kitten ssh
 alias tmux="tmux -u" # tmux 
 alias r="ranger" # ranger
+alias sudonvim="sudo -E -s nvim"
 
 # key remaps config
 bindkey '^I ' autosuggest-accept
@@ -135,3 +136,4 @@ export PATH="/usr/local/bin/blender:$PATH"
 
 # add postman to path
 export PATH="/usr/local/bin/postman:$PATH"
+alias sudonvim="sudo -E -s nvim"

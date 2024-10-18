@@ -56,7 +56,7 @@ This is my attempt to configure ubuntu for my future needs. This project will in
 
    Follow the directory for install instructions
 
-1. ## **LAMP Setup**
+1. ## **LAMP/LEMP/LEPP Setup**
 
    Follow the directory for install instructions
 
