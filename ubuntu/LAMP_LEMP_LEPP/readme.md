@@ -42,7 +42,7 @@ sudo apt install -y lsb-release gnupg2 ca-certificates apt-transport-https softw
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update
 sudo apt install php8.2 -y
-sudo apt install php8.2-bcmath php8.2-xml php8.2-curl php8.2-dom php8.2-mysql php8.2-gd php8.2-zip php8.2-intl # install required extensions (here I have added it for laravel)
+sudo apt install php8.2-bcmath php8.2-xml php8.2-curl php8.2-dom php8.2-gd php8.2-zip php8.2-intl # install required extensions (here I have added it for laravel)
 
 sudo update-alternatives --config php # to change the deafult php version to current version
 
@@ -200,10 +200,14 @@ sudo ufw reload
 
 ### MySQL
 
-1. Install MySQL
+1. Install MySQL and required extensions
+
    ```sh
    sudo apt install mysql-server
+
+   sudo apt install php8.2-mysql # Extension for mysql
    ```
+
 1. Secure MySQL Installation
    ```sh
    sudo mysql_secure_installation
@@ -359,20 +363,34 @@ In this step we are trying to configure `nginx` to serve a website that we want 
       root /home/elmiur/work/project/sitename/public;
       index index.php;
 
+      add_header X-Frame-Options "SAMEORIGIN";
+      add_header X-Content-Type-Options "nosniff";
+
+      charset utf-8;
+
       location / {
           try_files $uri $uri/ /index.php?$query_string;
       }
 
+      location = /favicon.ico { access_log off; log_not_found off; }
+      location = /robots.txt  { access_log off; log_not_found off; }
+
+      error_page 404 /index.php;
+
       location ~ \.php$ {
           include snippets/fastcgi-php.conf;
-          fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+          fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
+
+          fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+          include fastcgi_params;
+
+          fastcgi_hide_header X-Powered-By;
       }
 
-      location ~ /\.ht {
+      location ~ /\.(?!well-known).* {
           deny all;
       }
 
-      access_log /var/log/nginx/sitename.access.log;
       error_log /var/log/nginx/sitename.error.log;
   }
   ```
