@@ -12,9 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "elmiur.plugins" }, { import = "elmiur.plugins.lsp" } }, {
-	install = {
-		colorscheme = { "catppuccin" },
-	},
 	checker = {
 		enabled = true,
 		notify = false,

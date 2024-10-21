@@ -124,6 +124,7 @@ alias kssh="kitten ssh" # kitty/kitten ssh
 alias tmux="tmux -u" # tmux 
 alias r="ranger" # ranger
 alias sudonvim="sudo -E -s nvim"
+alias caapid="source ~/sitename.sh"
 
 # key remaps config
 bindkey '^I ' autosuggest-accept

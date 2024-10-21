@@ -16,12 +16,11 @@
 1. Bonus #2: Also in your `bashrc/zshrc` etc set your EDITOR env var so various programs know what editor you prefer to use: `EDITOR=/usr/local/bin/nvim`
 1. Install `ripgrep` for telescope fuzzy finder, find more on this from [github](https://github.com/BurntSushi/ripgrep)
    ```sh
-   curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb &&
-   sudo dpkg -i ripgrep_13.0.0_amd64.deb
+   sudo apt install ripgrep
    ```
 1. Git clone my repo and create a symbolic link to the directory
    ```sh
-   git clone git@github.com:woomiz/config.git ~/packages/config &&
+   git clone git@github.com:vishnupeas/config.git ~/packages/config &&
    ln -sf ~/packages/config/ubuntu/nvim/nvim ~/.config/nvim
    ```
 

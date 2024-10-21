@@ -33,7 +33,7 @@ sudo apt install php-mysql # install mysql for latest php
 php -v
 ```
 
-#### Optional - Install a differnt version of php
+#### Optional - Install a different version of php
 
 ```sh
 sudo apt update &&
@@ -44,7 +44,7 @@ sudo apt update
 sudo apt install php8.2 -y
 sudo apt install php8.2-bcmath php8.2-xml php8.2-curl php8.2-dom php8.2-gd php8.2-zip php8.2-intl # install required extensions (here I have added it for laravel)
 
-sudo update-alternatives --config php # to change the deafult php version to current version
+sudo update-alternatives --config php # to change the default php version to current version
 
 # install apache2 for php8.2 - do this after installing apache2
 sudo apt install libapache2-mod-php8.2
@@ -469,3 +469,11 @@ In this step we are trying to configure `apache` to host a website that we want 
 
   sudo chmod o+x /home/elmiur # If this is not discoverable, give persmission to the path with
   ```
+
+### Automate the flow
+
+Make use of a shell script and automate the entire flow
+
+```sh
+cp ~/packages/config/ubuntu/LAMP_LEMP_LEPP/sitename.sh ~/
+```

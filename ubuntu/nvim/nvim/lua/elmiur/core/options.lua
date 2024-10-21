@@ -17,7 +17,7 @@ vim.opt.wrap = false
 -- cursor line
 vim.opt.cursorline = true
 
--- backsapce
+-- backspace
 vim.opt.backspace = "indent,eol,start"
 
 -- split settings
@@ -44,3 +44,5 @@ vim.opt.updatetime = 50
 
 -- word settings
 vim.opt.iskeyword:append("-") -- make it part of the word
+vim.opt.spelllang = "en_us" -- set spell checking language
+vim.opt.spell = true -- enable spell checking
