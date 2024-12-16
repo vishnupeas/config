@@ -125,6 +125,7 @@ alias tmux="tmux -u" # tmux
 alias r="ranger" # ranger
 alias sudonvim="sudo -E -s nvim"
 alias caapid="source ~/sitename.sh"
+alias sudonvim="sudo -E -s nvim"
 
 # key remaps config
 bindkey '^I ' autosuggest-accept
@@ -137,4 +138,14 @@ export PATH="/usr/local/bin/blender:$PATH"
 
 # add postman to path
 export PATH="/usr/local/bin/postman:$PATH"
-alias sudonvim="sudo -E -s nvim"
+
+# add laravel to path
+export PATH="/home/elmiur/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/elmiur/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+# bun completions
+[ -s "/home/elmiur/.bun/_bun" ] && source "/home/elmiur/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

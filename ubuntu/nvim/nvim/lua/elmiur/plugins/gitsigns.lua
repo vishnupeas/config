@@ -32,20 +32,20 @@ return {
 		end)
 
 		-- Actions
-		map("n", "<leader>ghp", gitsigns.preview_hunk)
+		map("n", "<leader>ghp", gitsigns.preview_hunk, { desc = "Git Preview hunk" })
 
-		map("n", "<leader>ghs", gitsigns.stage_hunk)
-		map("n", "<leader>ghu", gitsigns.undo_stage_hunk)
-		map("n", "<leader>ghr", gitsigns.reset_hunk)
+		map("n", "<leader>ghs", gitsigns.stage_hunk, { desc = "Git stage hunk" })
+		map("n", "<leader>ghu", gitsigns.undo_stage_hunk, { desc = "Git undo stage hunk" })
+		map("n", "<leader>ghr", gitsigns.reset_hunk, { desc = "Git reset hunk" })
 		map("v", "<leader>ghs", function()
 			gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-		end)
+		end, { desc = "Git stage hunk" })
 		map("v", "<leader>ghr", function()
 			gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-		end)
+		end, { desc = "Git reset hunk" })
 
-		map("n", "<leader>gbs", gitsigns.stage_buffer)
-		map("n", "<leader>gbr", gitsigns.reset_buffer)
+		map("n", "<leader>gbs", gitsigns.stage_buffer, { desc = "Git stage buffer" })
+		map("n", "<leader>gbr", gitsigns.reset_buffer, { desc = "Git reset buffer" })
 
 		-- Text object
 		map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
