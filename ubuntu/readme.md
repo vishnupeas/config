@@ -63,9 +63,12 @@ This is my attempt to configure ubuntu for my future needs. This project will in
 1. ## **Create a passwordless guest user**
 
    1. Create a user named `guest` with a temporary password
-   1. Run the following command to replace the password
       ```sh
-      sudo sed -i 's/(?<=guest:)[^\s:]+(?=:)/U6aMy0wojraho/' /etc/shadow
+       sudo adduser guest
+      ```
+   1. Remove password for this user
+      ```sh
+      sudo passwd -d guest
       ```
 
 1. ## **FUSE**
@@ -77,12 +80,18 @@ This is my attempt to configure ubuntu for my future needs. This project will in
    sudo add-apt-repository universe &&
    sudo apt install libfuse2
    ```
-
 1. ## **fnm**
 
    ```sh
    curl -fsSL https://fnm.vercel.app/install | bash &&
    fnm use 18
+   ```
+
+1. ## **bun**
+
+   For more info, look at the [official website](https://bun.sh/docs/installation)
+   ```sh
+   curl -fsSL https://bun.sh/install | bash
    ```
 
 1. ## **vim**

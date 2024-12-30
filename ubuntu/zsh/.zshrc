@@ -112,10 +112,6 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# fnm
-export PATH="/home/$USER/.local/share/fnm:$PATH"
-eval "`fnm env`"
-
 # alias config
 alias vi=nvim
 alias vim=nvim
@@ -149,3 +145,10 @@ export PHP_INI_SCAN_DIR="/home/elmiur/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# fnm
+FNM_PATH="/home/elmiur/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/elmiur/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi

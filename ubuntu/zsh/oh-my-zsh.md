@@ -73,7 +73,7 @@ You can change the colors but to use already configured settings from my repo cr
 
 ```sh
 git clone git@github.com:woomiz/config.git ~/packages/config
-ln -sf ~/packages/config/ubuntu/zsh/.p10.zsh ~/.p10.zsh
+ln -sf ~/packages/config/ubuntu/zsh/.p10k.zsh ~/.p10k.zsh
 ```
 
 ### Update the zshrc with my config from git
