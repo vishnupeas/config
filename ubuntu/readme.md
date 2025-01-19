@@ -227,6 +227,14 @@ This is my attempt to configure ubuntu for my future needs. This project will in
 
    Download the debian package from [official website](https://obsidian.md/download)
 
+1. ## **calibre**
+
+   For install and update run this script
+   ```sh
+   sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+   ```
+   Look for more instruction in [official website](https://calibre-ebook.com/download)
+
 1. ## **mailhog**
 
    Follow the directory for install instructions
