@@ -44,6 +44,8 @@ sudo apt update
 sudo apt install php8.2 -y
 sudo apt install php8.2-bcmath php8.2-xml php8.2-curl php8.2-dom php8.2-gd php8.2-zip php8.2-intl # install required extensions (here I have added it for laravel)
 
+sudo apt install php8.2-redis # if you need redis inside laravel
+
 sudo update-alternatives --config php # to change the default php version to current version
 
 # install apache2 for php8.2 - do this after installing apache2
