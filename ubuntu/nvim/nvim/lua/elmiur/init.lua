@@ -1,2 +1,2 @@
 require("elmiur.core")
-require("elmiur.lazy")
+require("elmiur.config.lazy")
