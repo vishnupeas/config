@@ -122,7 +122,7 @@ This is my attempt to configure ubuntu for my future needs. This project will in
 
 1. ## **dbeaver**
 
-   Install dbeaver debian package from the [official website](https://dbeaver.io/download)
+   Download dbeaver from [here](https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb), if this doesn't work then go to their [official website](https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb) to download
 
 1. ## **neofetch**
 
