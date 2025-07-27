@@ -284,14 +284,20 @@ We have to do this if we are stuck with the installation screen of `phpmyadmin` 
   # Import phpmyadmin configuration tables to the database
   sudo mysql -u root -p phpmyadmin < /usr/share/phpmyadmin/sql/create_tables.sql
   ```
+- Make apache make use of the phpmyadmin apache.conf. This should enable you to use phpmyadmin
+  ```sh
+  sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
+  sudo a2enconf phpmyadmin
+  sudo systemctl reload apache2
+  ```
 
-- Configure phpmyadmin to use the database
+- Optional - Configure phpmyadmin to use the database
 
   ```sh
   sudo vim /etc/phpmyadmin/config.inc.php
   ```
 
-- Here, change the values on the file
+- Optional - Here, change the values on the file
 
   ```
   $cfg['Servers'][$i]['controluser'] = 'phpmyadmin';
