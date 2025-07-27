@@ -74,11 +74,11 @@ This is my attempt to configure ubuntu for my future needs. This project will in
 1. ## **FUSE**
 
    Read more in [here](https://github.com/AppImage/AppImageKit/wiki/FUSE)
-   For Ubuntu (>= 22.04):
+   For Ubuntu (>= 24.04):
 
    ```sh
    sudo add-apt-repository universe &&
-   sudo apt install libfuse2
+   sudo apt install libfuse2t64
    ```
 1. ## **fnm**
 
