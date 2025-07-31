@@ -5,3 +5,5 @@
 	context = 0
 [stash]
 	showPatch = true
+[init]
+	defaultBranch = main
