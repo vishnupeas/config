@@ -32,6 +32,7 @@ sudo update-alternatives --config x-terminal-emulator
 ```sh
 ln -s ~/packages/config/ubuntu/kitty/themes/ ~/.config/kitty/
 ln -sf ~/packages/config/ubuntu/kitty/kitty.conf ~/.config/kitty/kitty.conf
+ln -sf ~/packages/config/ubuntu/kitty/my-kitty.conf ./.config/kitty
 kitten themes # select patagonia and modify kitty.conf
 
 ## Reopen the terminal to reload configuration
