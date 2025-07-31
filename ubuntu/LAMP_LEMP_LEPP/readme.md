@@ -163,6 +163,16 @@ sudo ufw reset
 sudo ufw reload
 ```
 
+### Redis Server
+
+1. Install redis for making it work with ubuntu and php
+   ```sh
+   sudo apt install redis-server -y &&
+   sudo apt install php-redis -y
+   ```
+
+1. Download Redis Insight with this [link](https://s3.amazonaws.com/redisinsight.download/public/latest/Redis-Insight-linux-amd64.deb) or download it from the [official website](https://redis.io/insight/)
+
 ### Postgresql
 
 1. Install Postgresql. A default user `postgres` will be created to do administrative tasks.

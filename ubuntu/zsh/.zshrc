@@ -135,6 +135,9 @@ export PATH="/usr/local/bin/blender:$PATH"
 # add postman to path
 export PATH="/usr/local/bin/postman:$PATH"
 
+# add composer (laravel) to path
+export PATH=~/.config/composer/vendor/bin:$PATH
+
 # add laravel to path
 export PATH="/home/elmiur/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/elmiur/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
