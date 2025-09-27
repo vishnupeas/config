@@ -6,9 +6,6 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 	},
 	config = function()
-		-- import lspconfig plugin
-		local lspconfig = require("lspconfig")
-
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -61,14 +58,19 @@ return {
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-		for type, icon in pairs(signs) do
-			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		end
+		vim.diagnostic.config({
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = " ",
+					[vim.diagnostic.severity.WARN]  = " ",
+					[vim.diagnostic.severity.HINT]  = "󰠠 ",
+					[vim.diagnostic.severity.INFO]  = " ",
+				},
+			},
+		})
 
 		-- configure latex server
-		lspconfig["ltex"].setup({
+		vim.lsp.config("ltex", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = {
@@ -83,63 +85,74 @@ return {
 				"rmd",
 			},
 		})
-		lspconfig["texlab"].setup({
+		vim.lsp.enable({ "ltex" })
+
+		vim.lsp.config("texlab", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
+		vim.lsp.enable({ "texlab" })
 
 		-- configure php server
-		lspconfig["intelephense"].setup({
+		vim.lsp.config("intelephense", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
+		vim.lsp.enable({ "intelephense" })
 
 		-- configure C,C++ server
-		lspconfig["clangd"].setup({
+		vim.lsp.config("clangd", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
+		vim.lsp.enable({ "clangd" })
 
 		-- configure html server
-		lspconfig["html"].setup({
+		vim.lsp.config("html", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
+		vim.lsp.enable({ "html" })
 
 		-- configure typescript server
-		lspconfig["ts_ls"].setup({
+		vim.lsp.config("ts_ls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
+		vim.lsp.enable({ "ts_ls" })
 
 		-- configure css server
-		lspconfig["cssls"].setup({
+		vim.lsp.config("cssls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
+		vim.lsp.enable({ "cssls" })
 
 		-- configure tailwindcss server
-		lspconfig["tailwindcss"].setup({
+		vim.lsp.config("tailwindcss", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
+		vim.lsp.enable({ "tailwindcss" })
 
 		-- configure graphql language server
-		lspconfig["graphql"].setup({
+		vim.lsp.config("graphql", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "graphql", "gql", "typescriptreact", "javascriptreact" },
 		})
+		vim.lsp.enable({ "graphql" })
 
 		-- configure emmet language server
-		lspconfig["emmet_ls"].setup({
+		vim.lsp.config("emmet_ls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
 		})
+		vim.lsp.enable({ "emmet_ls" })
 
 		-- configure lua server (with special settings)
-		lspconfig["lua_ls"].setup({
+		vim.lsp.config("lua_ls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			settings = { -- custom settings for lua
@@ -158,5 +171,6 @@ return {
 				},
 			},
 		})
+		vim.lsp.enable({ "lua_ls" })
 	end,
 }
