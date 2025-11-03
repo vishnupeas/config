@@ -1,0 +1,9 @@
+[user]
+	name = vishnupeas
+	email = vishnups.developer@gmail.com
+[diff]
+	context = 0
+[stash]
+	showPatch = true
+[init]
+	defaultBranch = main
