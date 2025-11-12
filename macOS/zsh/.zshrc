@@ -126,6 +126,10 @@ alias sudonvim="sudo -E -s nvim"
 # key remaps config
 bindkey '^I ' autosuggest-accept
 
+# add homebrew to path
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+
 # variable RANGER_LOAD_DEFAULT_RC to FALSE to avoid loading it twice.
 export RANGER_LOAD_DEFAULT_RC=false
 

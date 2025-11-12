@@ -2,7 +2,7 @@
 
 ## Packages
 
-1. ## **git**
+1. ## **Git**
 
    #### Configure Git
 
@@ -17,13 +17,20 @@
    ssh-keygen -t ed25519 -f github
    ```
 
-1. ## **wezterm**
+1. ## **Homebrew**
+
+   ```sh
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   brew doctor # To check if brew is installed correctly
+   ```
+
+1. ## **Wezterm**
 
    ```sh
    brew install --cask wezterm
    ```
 
-1. ## **zsh**
+1. ## **Zsh**
 
    Follow the directory for install instructions.
 
@@ -33,6 +40,10 @@
    brew install fnm &&
    fnm use 22
    ```
+
+1. ## **keePassXC**
+
+   Go to official [website](https://keepassxc.org/download/#macos) and download the latest version for macOS and install it.
 
 1. ## **wakatime**
 
