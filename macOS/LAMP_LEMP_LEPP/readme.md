@@ -30,6 +30,7 @@ Install required extensions to work with php
 brew install zlib # for extension compile properly
 brew install pkg-config # for intl extension
 brew install php-intl # starting from php 8.4, intl is a sperate formula
+# export PKG_CONFIG_PATH="/opt/homebrew/Cellar/icu4c@77/77.1/lib/pkgconfig"
 ```
 
 ### Redis
@@ -77,54 +78,22 @@ brew install composer
 1. Install MySQL and required extensions
 
    ```sh
-   brew install mysql &&
-
-   sudo apt install php8.2-mysql # Extension for mysql
+   brew install mysql
    ```
 
-1. Secure MySQL Installation
+1. Secure MySQL Installation, change password
+
    ```sh
-   sudo mysql_secure_installation
+   mysql_secure_installation
    ```
-1. Change MySQL password
-   Default authentication for mysql administrative user is `unix_socket` but it can't be used for `phpmyadmin` so create a `caching_sha2_password` for the root (optionally you can also create a new user)
 
-   1. Access mysql
+1. Check if password has changed
 
-      ```sh
-       sudo mysql
-      ```
-
-   1. change password
-
-      ```sql
-      USE mysql;
-      SHOW VARIABLES LIKE 'validate_password%';
-      SET GLOBAL validate_password.policy = 0;
-      SET GLOBAL validate_password.length = 4;
-      ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'some';
-      FLUSH PRIVILEGES;
-      ```
-
-   1. Check if password has changed
-      ```sh
-      mysql -u root -p
-      ```
-
-1. Disable mysql on boot
    ```sh
-   sudo systemctl disable mysql
-   ```
-1. Start/stop/restart mysql
-   ```sh
-   sudo systemctl start mysql
-   sudo systemctl stop mysql
-   sudo systemctl restart mysql
+   mysql -u root -p
    ```
 
-### Optional - phpmyadmin
-
-#### Case 1: Smooth Installation
+### PhpMyAdmin
 
 1. Install phpmyadmin
 
@@ -132,75 +101,62 @@ brew install composer
    brew install phpmyadmin
    ```
 
-#### Case 2: Manually Set Up phpMyAdmin Database
+1. Configure **Nginx**
 
-We have to do this if we are stuck with the installation screen of `phpmyadmin` giving an error `Password doesn't satisfy the current policy requirements` asking you to retry.
+   ```sh
+   ln -s /opt/homebrew/share/phpmyadmin /opt/homebrew/var/www/ # link /phpmyadmin route to install path
+   vim /opt/homebrew/etc/nginx/nginx.conf # open nginx config file
+   ```
 
-- Setup the database, table and user
+   Update the default nginx config to contain this block.
 
-  ```sh
-  sudo mysql -u root -p
+   ```
+   server {
+         listen 80;
+         listen [::]:80;
+         server_name localhost;
 
-  # create database and user
-  CREATE DATABASE phpmyadmin;
-  CREATE USER 'phpmyadmin'@'localhost' IDENTIFIED BY 'your_password_here';
-  GRANT ALL PRIVILEGES ON phpmyadmin.* TO 'phpmyadmin'@'localhost' WITH GRANT OPTION;
-  FLUSH PRIVILEGES;
+         #access_log  logs/host.access.log  main;
 
-  # Import phpmyadmin configuration tables to the database
-  sudo mysql -u root -p phpmyadmin < /usr/share/phpmyadmin/sql/create_tables.sql
-  ```
+         location / {
+             root html;
+             index index.php index.html index.htm;
+         }
 
-- Make apache make use of the phpmyadmin apache.conf. This should enable you to use phpmyadmin
+         #error_page  404              /404.html;
 
-  ```sh
-  sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
-  sudo a2enconf phpmyadmin
-  sudo systemctl reload apache2
-  ```
+         # redirect server error pages to the static page /50x.html
+         #
+         error_page 500 502 503 504 /50x.html;
+         location = /50x.html {
+             root html;
+         }
 
-- Optional - Configure phpmyadmin to use the database
+         # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+         #
+         location ~ \.php$ {
+             root html;
+             fastcgi_pass 127.0.0.1:9000;
+             fastcgi_index index.php;
+             fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+             include fastcgi_params;
+         }
 
-  ```sh
-  sudo vim /etc/phpmyadmin/config.inc.php
-  ```
+         # deny access to .htaccess files, if Apache's document root
+         # concurs with nginx's one
+         #
+         location ~ /\.ht {
+             deny all;
+         }
+     }
+   ```
 
-- Optional - Here, change the values on the file
+   Restart nginx
 
-  ```
-  $cfg['Servers'][$i]['controluser'] = 'phpmyadmin';
-  $cfg['Servers'][$i]['controlpass'] = 'your_password_here';
-  ```
-
-- Restart apache2
-
-  ```sh
-  sudo systemctl restart apache2
-  ```
-
-#### Update phpmyadmin upload limit
-
-- Open the file to edit
-
-  ```sh
-  sudo vim /etc/php/8.3/apache2/php.ini
-  ```
-
-- Now change values in this file to
-
-  ```
-  memory_limit = 750M
-  post_max_size = 750M
-  upload_max_filesize = 1000M
-  max_execution_time = 5000
-  max_input_time = 3000
-  ```
-
-- Restart `apache2` after this
-
-  ```sh
-  sudo systemctl restart apache2
-  ```
+   ```sh
+   nginx -t # test config
+   nginx -s reload # restart nginx
+   ```
 
 ### Setup Virtual Hosts
 
@@ -278,72 +234,6 @@ In this step we are trying to configure `nginx` to serve a website that we want 
 
   sudo nginx -t # to check nginx is working ok
   sudo systemctl restart nginx # restart after modifying
-  ```
-
-#### Apache Server
-
-In this step we are trying to configure `apache` to host a website that we want to serve under a certain domain. By default `apache` serves files under `/var/www/html/`. But we need it to server the files in our custom file path.
-
-- Edit `/etc/hosts`
-
-  ```sh
-  sudo vim /etc/hosts
-  ```
-
-  Now add all the domains in here eg:
-
-  ```
-  127.0.0.1 sitename.test
-  ```
-
-- Make a copy of default apache conf
-
-  ```sh
-  cd /etc/apache2/sites-enabled/
-  sudo cp 000-default.conf sitename.conf #filename is not significant
-  sudo vim sitename.conf
-  ```
-
-- Now replace the file with this content. Here i'm serving a laravel project, so the root files are served under `public` directory.
-
-  ```conf
-  <VirtualHost *:80>
-      ServerAdmin webmaster@localhost
-      ServerName sitename.test
-      DocumentRoot /home/elmiur/work/projects/mysite/public
-
-      <Directory /home/sitename/work/projects/mysite/public>
-          Options Indexes FollowSymLinks
-          AllowOverride All
-          Require all granted
-      </Directory>
-
-      ErrorLog ${APACHE_LOG_DIR}/error.log
-      CustomLog ${APACHE_LOG_DIR}/access.log combined
-
-  </VirtualHost>
-  ```
-
-- Enable this configuration with
-
-  ```sh
-  sudo a2ensite sitename.conf
-
-  sudo systemctl restart apache2 # for all modification
-  ```
-
-- Give permission to access storage. Because the application generates files like user data(profile image, other attachments), cache, logs etc... that needs to be served by web-servers like `apache` and `nginx` we need to give access to these folders inside project for the user group `www-data`. Here we are giving ownership to current user (can do anything with the data) and group ownership to `var-www` (can read and write).
-
-  ```sh
-  sudo chown -R $USER:www-data storage
-  ```
-
-- Make sure the project path is discoverable. Check that with
-
-  ```sh
-  namei /home/elmiur/work/project/mysite
-
-  sudo chmod o+x /home/elmiur # If this is not discoverable, give persmission to the path with
   ```
 
 ### Automate the flow

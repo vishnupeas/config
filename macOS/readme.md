@@ -34,6 +34,17 @@
 
    Follow the directory for install instructions.
 
+1. ## **Neovim**
+
+   Follow the directory for install instructions.
+
+   #### Configure Neovim
+
+   ```sh
+   mkdir -p ~/.config/nvim &&
+   ln -sf ~/packages/config/macOS/nvim/init.vim ~/.config/nvim/init.vim
+   ```
+
 1. ## **fnm**
 
    ```sh

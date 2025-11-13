@@ -140,7 +140,7 @@ export PATH="/usr/local/bin/blender:$PATH"
 export PATH="/usr/local/bin/postman:$PATH"
 
 # add composer (laravel) to path
-export PATH=~/.config/composer/vendor/bin:$PATH
+export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # add laravel to path
 export PATH="/home/elmiur/.config/herd-lite/bin:$PATH"
