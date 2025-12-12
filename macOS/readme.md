@@ -52,6 +52,12 @@
    fnm use 22
    ```
 
+1. ## **Bun**
+
+   ```sh
+   curl -fsSL https://bun.com/install | bash
+   ```
+
 1. ## **keePassXC**
 
    Go to official [website](https://keepassxc.org/download/#macos) and download the latest version for macOS and install it.

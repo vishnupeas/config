@@ -35,10 +35,14 @@ brew install php-intl # starting from php 8.4, intl is a sperate formula
 
 ### Redis
 
-```sh
-brew install redis # for redis on macos
-pecl install redis # for php-redis
-```
+1. Install redis server and php extension
+
+   ```sh
+   brew install redis # for redis on macos
+   pecl install redis # for php-redis
+   ```
+
+1. Install redis insight tool (optional) from [here](https://s3.amazonaws.com/redisinsight.download/public/latest-v3/Redis-Insight-mac-arm64.dmg) or from the official [website](https://redis.io/downloads/#Redis_Insight).
 
 ### Composer
 
